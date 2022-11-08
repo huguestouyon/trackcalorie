@@ -53,11 +53,11 @@ if (!empty($_POST)) {
             $_SESSION["error"][] = "Sélectionner un genre";
         }
 
-        if ($height < 100 && $height > 220) {
+        if ($height < 100 || $height > 220) {
             $_SESSION["error"][] = "Erreur lors de la saisie de la taille, la taille doit être comprise entre 100cm et 220cm";
         }
 
-        if ($weight < 30 && $weight > 200) {
+        if ($weight < 30 || $weight > 200) {
             $_SESSION["error"][] = "Erreur lors de la saisie du poids, le poids doit être compris entre 30 et 200kg";
         }
 
@@ -128,25 +128,25 @@ require_once "includes/header.php";
 ?>
 <form action="" method="POST">
     <div>
-        <input type="text" name="lastname" id="lastname" placeholder="Nom">
+        <input type="text" name="lastname" id="lastname" placeholder="Nom" required>
     </div>
     <div>
-        <input type="text" name="name" id="name" placeholder="Prénom">
+        <input type="text" name="name" id="name" placeholder="Prénom" required>
     </div>
     <div>
-        <input type="email" name="email" id="email" placeholder="Email">
+        <input type="email" name="email" id="email" placeholder="Email" required>
     </div>
     <div>
-        <input type="password" name="pass" id="pass" placeholder="Mot de passe">
+        <input type="password" name="pass" id="pass" placeholder="Mot de passe" required>
     </div>
     <div>
-        <input type="password" name="confirmpass" id="confirmpass" placeholder="Confirmation">
+        <input type="password" name="confirmpass" id="confirmpass" placeholder="Confirmation" required>
     </div>
     <div>
-        <input type="number" name="height" id="height" placeholder="Taille (cm)" min="100" max="220">
+        <input type="number" name="height" id="height" placeholder="Taille (cm)" min="100" max="220" required>
     </div>
     <div>
-        <input type="number" name="weight" id="weight" placeholder="Poids (kg)" min="30" max="200">
+        <input type="number" name="weight" id="weight" placeholder="Poids (kg)" min="30" max="200" required>
     </div>
     <div>
         <input type="radio" class="btn-check" name="sex" id="option1" autocomplete="off" value="man" checked>

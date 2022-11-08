@@ -52,11 +52,11 @@ require_once "includes/header.php";
 <form action="" method="POST">
     <div>
         <label for="email">Email</label>
-        <input type="email" name="email" id="email">
+        <input type="email" name="email" id="email" required>
     </div>
     <div>
         <label for="pass">Mot de passe</label>
-        <input type="password" name="pass" id="pass">
+        <input type="password" name="pass" id="pass" required>
     </div>
     <button type="submit">Me connecter</button>
 </form>
