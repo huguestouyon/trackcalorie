@@ -49,17 +49,26 @@ if(!empty($_POST)) {
 $title = "Connexion";
 require_once "includes/header.php";
 ?>
+<div class="container-index">
+<div class="container-logo">
+    <img src="img/Logo calorie.svg" alt="Logo">
+    <h1 class="title">Track Calorie</h1>
+</div>
+<div class="container-form">
 <form action="" method="POST">
-    <div>
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email" required>
+    <div class="email">
+        <i class="fa fa-user icon"></i>
+        <input type="email" name="email" id="email" class="input-field" required>
     </div>
-    <div>
-        <label for="pass">Mot de passe</label>
-        <input type="password" name="pass" id="pass" required>
+    <div class="pass">
+    <i class="fa-sharp fa-solid fa-lock icon"></i>
+        <input type="password" name="pass" id="pass" class="input-field" required>
     </div>
     <button type="submit">Me connecter</button>
 </form>
+</div>
+</div>
+
 <?php
 require_once "includes/footer.php";
 ?>

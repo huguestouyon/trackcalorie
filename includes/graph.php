@@ -1,5 +1,5 @@
 <?php
-require_once "includes/connect.php";
+require "includes/connect.php";
 $derniersjours = [];
 $caloriesparjour = [];
 $id = 3;
