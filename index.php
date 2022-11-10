@@ -1,6 +1,8 @@
 
 <?php
 session_start();
+//var_dump($_SESSION["user"]["id"]);
+// $id = $_SESSION["user"]["id"];
 if (!isset($_SESSION["user"])) {
     header("Location: connexion.php");
     exit;
@@ -37,13 +39,15 @@ if(!empty($_POST)) {
         if ($_SESSION["error"] === []) {
             $date = $_POST["kaldate"];
             require "includes/connect.php";
-            $sql = "SELECT * FROM `calories` WHERE `date` = :datechoisie";
+            $sql = "SELECT * FROM `calories` WHERE `date` = :datechoisie AND `id_membre` = :id";
             $query = $db->prepare($sql);
             $query->bindValue(":datechoisie", $date, PDO::PARAM_STR);
+            $query->bindValue(":id", $_SESSION["user"]["id"], PDO::PARAM_STR);
             $query->execute();
             $data = $query->fetchAll();
             // Si la date existe déjà : update la donnée
             if(!empty($data)) {
+                echo $_SESSION["user"]["id"];
                 $sql = "UPDATE `calories` SET `calorie` = :kalnb WHERE `date`= :datechoisie";
                 $query = $db->prepare($sql);
                 $query->bindValue(":kalnb", $data[0]["calorie"] + $_POST["kalnb"], PDO::PARAM_STR);
@@ -51,6 +55,7 @@ if(!empty($_POST)) {
                 $query->execute();
                 $_SESSION["validinsertcalorie"] = ["Vos données ont bien été sauvegardé !"];
             } else {
+                
                 // Sinon insérer une nouvelle entrée
                 $sql = "INSERT INTO `calories`(`date`, `calorie`, `id_membre`) VALUES (:kaldate, :kalnb, :idmember)";
                 $query = $db->prepare($sql);

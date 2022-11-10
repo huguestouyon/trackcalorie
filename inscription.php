@@ -1,11 +1,5 @@
 <?php
-// session_start();
-// echo "<pre>";
-// var_dump($_SESSION);
-// echo "</pre>";
-// echo "<pre>";
-// var_dump($_POST);
-// echo "</pre>";
+session_start();
 if (isset($_SESSION["user"])) {
     header("Location: index.php");
     exit;

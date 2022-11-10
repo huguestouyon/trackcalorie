@@ -2,7 +2,7 @@
 require "includes/connect.php";
 $derniersjours = [];
 $caloriesparjour = [];
-$id = 3;
+$id = $_SESSION["user"]["id"];
 for ($i = 0; $i < 10; $i++) {
     $derniersjours[] = date('Y-m-d', strtotime("- $i day"));
     $sql = "SELECT `date`, `calorie` FROM `calories` WHERE `id_membre` = '$id' AND `date` = '$derniersjours[$i]'";
