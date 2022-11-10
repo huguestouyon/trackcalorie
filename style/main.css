@@ -7,12 +7,30 @@
 :root {
     --bg: #343A40;
     --yel: #FFC700;
+    --light: #E8F0FE;
+    --grey: #7C7C7C;
 }
 
 body {
     background-color: var(--bg);
+    font-family: 'Roboto', sans-serif;
 
 }
+
+footer {
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #6C757D;
+}
+
+footer svg {
+    width: 50px;
+    height: auto;
+}
+
+/***** PAGE connexion.php *****/
 
 .title {
     color: var(--yel);
@@ -38,39 +56,106 @@ body {
     gap: 2rem;
 }
 
+.container-logo img {
+    width: 33%;
+    height: auto;
+}
+
 .container-form {
     width: 50%;
     display: flex;
     justify-content: center;
+    border-left: 1px solid rgba(124, 124, 124, 0.75);
 }
 
-.container-form form {
-    padding: 8rem 7rem;
+.container-form .form {
+    padding: 6% 13% 5%;
     /* border: 1px solid white; */
     box-shadow: 0px 4px 21px rgba(0, 0, 0, 0.25);
-}
-
-.container-form form .email, .container-form form .pass {
-    width: 100%;
-    margin-bottom: 10px;
-}
-
-
-.container-form form .input-field {
-    width: 100%;
-    padding: 10px;
     text-align: center;
-    border-radius: 1em;
 }
 
-.container-form form .email i, .container-form form .pass i {
-    position: absolute;
+.container-form .form form {
+    padding: 1rem;
 }
 
+.input-container {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    width: 100%;
+    margin-bottom: 20px;
+}
 .icon {
     padding: 10px;
+    background: var(--light);
     color: var(--yel);
     min-width: 50px;
     text-align: center;
+    border-radius: 1em 0 0 1em;
 }
 
+.input-field {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    background-color: var(--light);
+    border: none;
+    border-left: 1px solid var(--bg);
+    border-radius: 0 1em 1em 0;
+    color: var(--grey);
+    padding-right: 5em;
+}
+
+.btn-confirm {
+    padding: .5rem 1rem;
+    border-radius: 1em;
+    outline: none;
+    border: none;
+    margin-top: 1rem;
+}
+
+@media screen and (max-width: 1200px) and (min-width: 901px) {
+    .container-logo {
+        width: 35%;
+    }
+
+    .container-logo img {
+        width: 45%;
+    }
+    
+    .container-form {
+        width: 65%;
+    }
+}
+
+@media screen and (max-width: 900px) and (min-width: 701px) {
+    .container-index {
+        flex-direction: column;
+        gap: 3rem;
+    
+    }
+    .container-form {
+        border: none;
+    }
+}
+
+@media screen and (max-width: 700px) and (min-width: 200px) {
+    .container-index {
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 0;
+    }
+    .container-form {
+        border: none;
+        width: 100%;
+    }
+    .container-logo {
+        margin-top: 2rem;
+    }
+
+    .container-form .form {
+        box-shadow: none;
+        width: 100%;
+    }
+
+}

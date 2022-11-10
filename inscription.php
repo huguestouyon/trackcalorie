@@ -122,7 +122,7 @@ require_once "includes/header.php";
 ?>
             <p><?= $message ?></p>
 <?php
-        }
+    }
         unset($_SESSION["error"]);
     }
 ?>

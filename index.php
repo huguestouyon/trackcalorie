@@ -52,7 +52,6 @@ if(!empty($_POST)) {
                 $_SESSION["validinsertcalorie"] = ["Vos données ont bien été sauvegardé !"];
             } else {
                 // Sinon insérer une nouvelle entrée
-                echo "fzefef";
                 $sql = "INSERT INTO `calories`(`date`, `calorie`, `id_membre`) VALUES (:kaldate, :kalnb, :idmember)";
                 $query = $db->prepare($sql);
                 $query->bindValue(":kaldate", $_POST["kaldate"], PDO::PARAM_STR);
