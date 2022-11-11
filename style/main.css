@@ -9,6 +9,7 @@
     --yel: #FFC700;
     --light: #E8F0FE;
     --grey: #7C7C7C;
+    --red: #ff0033;
 }
 
 body {
@@ -30,20 +31,70 @@ footer svg {
     height: auto;
 }
 
+.error {
+    color: var(--red);
+    font-weight: bold;
+}
+
+.valid {
+    color: green;
+    font-weight: bold;
+}
+
+/***** navbar *****/
+.logo-nav img {
+    width: 60px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.btn-nav button {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-color: var(--bg);
+    border: 1px solid var(--yel);
+    outline: none;
+    margin-right: 1rem;
+    cursor: pointer;
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.btn-nav button i {
+    color: var(--grey);
+}
+
+.btn-nav button:hover i {
+    color: var(--yel);
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 1px solid var(--grey);
+}
+
+nav h1 {
+    color: var(--yel);
+    font-family: 'Grenze', sans-serif;
+    font-size: 3rem;
+}
+
 /***** PAGE connexion.php *****/
 
 .title {
     color: var(--yel);
     font-family: 'Grenze', sans-serif;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.75);
-    
 }
 
 .container {
     height: 90vh;
 }
 
-.container-index {
+.container-login {
     padding-top: 20vh;
     width: 100%;
     display: flex;
@@ -84,11 +135,13 @@ footer svg {
 }
 
 .input-container {
-    display: -ms-flexbox; /* IE10 */
+    display: -ms-flexbox;
+    /* IE10 */
     display: flex;
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
 }
+
 .icon {
     padding: 10px;
     background: var(--light);
@@ -108,23 +161,32 @@ footer svg {
     border-radius: 0 1em 1em 0;
     color: var(--grey);
     padding-right: 5em;
-    
+
 }
 
 .btn-confirm {
+    margin: 0 auto 0;
     padding: .5rem 1rem;
     border-radius: 1em;
     outline: none;
-    border: none;
+    border: 1px solid var(--bg);
     margin-top: 1rem;
     transition: .5s ease-in;
+    display: flex;
+    gap: 1rem;
+    flex-direction: row;
+    align-content: center;
+    align-items: flex-end;
 }
 
 .btn-confirm:hover {
     cursor: pointer;
-    background-color: green;
-    color: var(--light);
+    background-color: var(--bg);
+    color: var(--yel);
+    border: 1px solid var(--light);
 }
+
+
 
 .container .container-link {
     width: 100%;
@@ -177,6 +239,149 @@ footer svg {
     color: var(--yel);
 }
 
+/***** PAGE : index.php *****/
+
+.container-index {
+    text-align: center;
+    margin-top: 2em;
+    width: 100%;
+}
+
+.container-index h2 span:first-child {
+    border: 1px solid var(--light);
+    border-bottom-left-radius: 1em;
+    border-top-left-radius: 1em;
+    padding: 1rem;
+    background-color: var(--red);
+}
+
+.container-index h2 span:last-child {
+    background-color: green;
+    padding: 1rem;
+    border-bottom-right-radius: 1em;
+    border-top-right-radius: 1em;
+}
+
+.container-index-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 1rem;
+}
+
+.container-index-title h2 {
+    margin-right: 1rem;
+    background-color: red;
+    padding: 1rem;
+    border-radius: 100%;
+}
+
+.container-index-title h3 {
+    color: var(--light);
+}
+
+
+
+/* MODAL */
+
+/* The Modal (background) */
+.modal1 {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content1 {
+    position: relative;
+    background-color: var(--light);
+    margin: auto;
+    padding: 0;
+    border: 1px solid var(--bg);
+    width: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header1 {
+    padding: 2px 16px;
+    background-color: var(--bg);
+    color: white;
+    text-align: center;
+}
+
+.modal-body1 {
+    padding: 2px 16px;
+}
+
+.modal-footer1 {
+    padding: 2px 16px;
+    background-color: var(--bg);
+    color: white;
+    text-align: center;
+}
+
 @media screen and (max-width: 1200px) and (min-width: 901px) {
     .container-logo {
         width: 35%;
@@ -185,23 +390,26 @@ footer svg {
     .container-logo img {
         width: 45%;
     }
-    
+
     .container-form {
         width: 65%;
     }
 }
 
 @media screen and (max-width: 900px) and (min-width: 701px) {
-    .container-index {
+    .container-login {
         flex-direction: column;
         gap: 3rem;
     }
+
     .container-form {
         border: none;
     }
+
     .container .container-link div:first-child {
         display: none;
     }
+
     .container .container-link {
         justify-content: center;
         margin-top: 1rem;
@@ -209,15 +417,17 @@ footer svg {
 }
 
 @media screen and (max-width: 700px) and (min-width: 200px) {
-    .container-index {
+    .container-login {
         flex-direction: column;
         justify-content: flex-start;
         gap: 0;
     }
+
     .container-form {
         border: none;
         width: 100%;
     }
+
     .container-logo {
         margin-top: 2rem;
     }
@@ -226,6 +436,7 @@ footer svg {
         box-shadow: none;
         width: 100%;
     }
+
     .container .container-link div:last-child {
         border-top: none;
     }

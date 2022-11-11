@@ -2,6 +2,7 @@
 require "includes/connect.php";
 $derniersjours = [];
 $caloriesparjour = [];
+$couleurcalories = [];
 $id = $_SESSION["user"]["id"];
 for ($i = 0; $i < 10; $i++) {
     $derniersjours[] = date('Y-m-d', strtotime("- $i day"));
@@ -16,17 +17,29 @@ for ($i = 0; $i < 10; $i++) {
     }
 }
 
+foreach ($caloriesparjour as $key) {
+    if($key <= 1500 ) {
+        $couleurcalories[] = "Blue";
+    } elseif($key > 1500 && $key<=6000) {
+        $couleurcalories[] = "Green";
+    } elseif($key > 6000 && $key<=8000) {
+        $couleurcalories[] = "Orange";
+    } elseif($key > 8000) {
+        $couleurcalories[] = "Red";
+    }
+}
+
 $dataPoints1 = array(
-    array("label" => "$derniersjours[9]", "y" => $caloriesparjour[9]),
-    array("label" => "$derniersjours[8]", "y" => $caloriesparjour[8]),
-    array("label" => "$derniersjours[7]", "y" => $caloriesparjour[7]),
-    array("label" => "$derniersjours[6]", "y" => $caloriesparjour[6]),
-    array("label" => "$derniersjours[5]", "y" => $caloriesparjour[5]),
-    array("label" => "$derniersjours[4]", "y" => $caloriesparjour[4]),
-    array("label" => "$derniersjours[3]", "y" => $caloriesparjour[3]),
-    array("label" => "$derniersjours[2]", "y" => $caloriesparjour[2]),
-    array("label" => "$derniersjours[1]", "y" => $caloriesparjour[1]),
-    array("label" => "$derniersjours[0]", "y" => $caloriesparjour[0])
+    array("label" => "$derniersjours[9]", "y" => $caloriesparjour[9], "color" => $couleurcalories[9]),
+    array("label" => "$derniersjours[8]", "y" => $caloriesparjour[8], "color" => $couleurcalories[8]), 
+    array("label" => "$derniersjours[7]", "y" => $caloriesparjour[7], "color" => $couleurcalories[7]),
+    array("label" => "$derniersjours[6]", "y" => $caloriesparjour[6], "color" => $couleurcalories[6]),
+    array("label" => "$derniersjours[5]", "y" => $caloriesparjour[5], "color" => $couleurcalories[5]),
+    array("label" => "$derniersjours[4]", "y" => $caloriesparjour[4], "color" => $couleurcalories[4]),
+    array("label" => "$derniersjours[3]", "y" => $caloriesparjour[3], "color" => $couleurcalories[3]),
+    array("label" => "$derniersjours[2]", "y" => $caloriesparjour[2], "color" => $couleurcalories[2]),
+    array("label" => "$derniersjours[1]", "y" => $caloriesparjour[1], "color" => $couleurcalories[1]),
+    array("label" => "$derniersjours[0]", "y" => $caloriesparjour[0], "color" => $couleurcalories[0])
 );
 //  $dataPoints2 = array(
 //      array("label"=> "", "y"=> 64.61),

@@ -24,8 +24,7 @@ if (!empty($_POST)) {
             if (!$user) {
                 $_SESSION["error"][] = "Utilisateur ou mot de passe incorrect";
             }
-
-            if (!password_verify($_POST["pass"], $user["pass"])) {
+            elseif(!password_verify($_POST["pass"], $user["pass"])) {
                 $_SESSION["error"][] = "Utilisateur ou mot de passe incorrect";
             }
 
@@ -49,7 +48,7 @@ $title = "Connexion";
 require_once "includes/header.php";
 ?>
 <div class="container">
-<div class="container-index">
+<div class="container-login">
     <div class="container-logo">
         <img src="img/Logo calorie.svg" alt="Logo">
         <h1 class="title">Track Calorie</h1>
@@ -66,9 +65,21 @@ require_once "includes/header.php";
                         <i class="fa-sharp fa-solid fa-lock icon"></i>
                         <input type="password" name="pass" id="pass" class="input-field" placeholder="Mot de passe" required>
                     </div>
-                    <button type="submit" class="btn-confirm">Me connecter</button>
+                    <?php
+                    if(isset($_SESSION["error"])) {
+                        foreach($_SESSION["error"] as $message) {
+                ?>
+                            <p><?= $message ?></p>
+                <?php
+                    }
+                        unset($_SESSION["error"]);
+                    }
+                ?>
+                    <button type="submit" class="btn-confirm">Me connecter <i class="fa-solid fa-arrow-right"></i></button>
+                    
                 </form>
             </div>
+            
         </div>
     </div>
     <div class="container-link">
