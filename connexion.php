@@ -9,36 +9,46 @@ if (!empty($_POST)) {
     if (isset($_POST["email"], $_POST["pass"]) && !empty($_POST["email"]) && !empty($_POST["pass"])) {
         $_SESSION["error"] = [];
         if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
-            $_SESSION["error"][] = "Adresse email invalide";
+            $_SESSION["error"][] = "Adresse email ou mot de passe incorrect";
         }
-
         if ($_SESSION["error"] === []) {
-            require "includes/connect.php";
-            $sql = "SELECT * FROM `membres` WHERE `email` = :email";
-            $query = $db->prepare($sql);
-            $query->bindValue(":email", $_POST["email"], PDO::PARAM_STR);
-            $query->execute();
-
-            $user = $query->fetch();
-
-            if (!$user) {
-                $_SESSION["error"][] = "Utilisateur ou mot de passe incorrect";
+            if (!isset($_SESSION["force"])) {
+                $_SESSION["force"] = 1;
+            } else {
+                $_SESSION["force"]++;
             }
-            elseif(!password_verify($_POST["pass"], $user["pass"])) {
-                $_SESSION["error"][] = "Utilisateur ou mot de passe incorrect";
+            if($_SESSION["force"] > 10) {
+                $_SESSION["error"] = ["Trop de tentatives de connexions échoués"];
             }
-
             if ($_SESSION["error"] === []) {
-                $_SESSION["user"] = [
-                    "id" => $user["id"],
-                    "name" => $user["prenom"],
-                    "lastname" => $user["nom"],
-                    "email" => $_POST["email"],
-                    "height" => $user["taille"],
-                    "weight" => $user["poids"],
-                    "sex" => $user["sexe"]
-                ];
-                header("Location: index.php");
+                require "includes/connect.php";
+                $sql = "SELECT * FROM `membres` WHERE `email` = :email";
+                $query = $db->prepare($sql);
+                $query->bindValue(":email", $_POST["email"], PDO::PARAM_STR);
+                $query->execute();
+                
+                $user = $query->fetch();
+                
+                if (!$user) {
+                    $_SESSION["error"][] = "Utilisateur ou mot de passe incorrect";
+                }
+                elseif(!password_verify($_POST["pass"], $user["pass"])) {
+                    $_SESSION["error"][] = "Utilisateur ou mot de passe incorrect";
+                }
+                
+                if ($_SESSION["error"] === []) {
+                    unset($_SESSION["force"]);
+                    $_SESSION["user"] = [
+                        "id" => $user["id"],
+                        "name" => $user["prenom"],
+                        "lastname" => $user["nom"],
+                        "email" => $_POST["email"],
+                        "height" => $user["taille"],
+                        "weight" => $user["poids"],
+                        "sex" => $user["sexe"]
+                    ];
+                    header("Location: index.php");
+                }
             }
         }
     }
@@ -67,16 +77,13 @@ require_once "includes/header.php";
                     </div>
                     <?php
                     if(isset($_SESSION["error"])) {
-                        foreach($_SESSION["error"] as $message) {
                 ?>
-                            <p><?= $message ?></p>
+                            <p class="log-error"><?= $_SESSION["error"][0] ?></p>
                 <?php
                     }
                         unset($_SESSION["error"]);
-                    }
                 ?>
                     <button type="submit" class="btn-confirm">Me connecter <i class="fa-solid fa-arrow-right"></i></button>
-                    
                 </form>
             </div>
             
@@ -90,8 +97,7 @@ require_once "includes/header.php";
         </div>
     </div>
 </div>
-
-
+<script src="script/connect.js"></script>
 <?php
 require_once "includes/footer.php";
 ?>

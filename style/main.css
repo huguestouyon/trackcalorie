@@ -48,7 +48,7 @@ footer svg {
     margin-bottom: 1rem;
 }
 
-.btn-nav button {
+.btn-nav button{
     width: 50px;
     height: 50px;
     border-radius: 100%;
@@ -60,11 +60,11 @@ footer svg {
     box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
-.btn-nav button i {
+.btn-nav button i{
     color: var(--grey);
 }
 
-.btn-nav button:hover i {
+.btn-nav button:hover i{
     color: var(--yel);
 }
 
@@ -281,107 +281,10 @@ nav h1 {
     color: var(--light);
 }
 
-
-
-/* MODAL */
-
-/* The Modal (background) */
-.modal1 {
-    display: none;
-    /* Hidden by default */
-    position: fixed;
-    /* Stay in place */
-    z-index: 1;
-    /* Sit on top */
-    padding-top: 100px;
-    /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%;
-    /* Full width */
-    height: 100%;
-    /* Full height */
-    overflow: auto;
-    /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0);
-    /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.4);
-    /* Black w/ opacity */
+.input-br-none {
+    border-radius: 0.375em 0px 0px 0.375em;
+    padding: 10px;
 }
-
-/* Modal Content */
-.modal-content1 {
-    position: relative;
-    background-color: var(--light);
-    margin: auto;
-    padding: 0;
-    border: 1px solid var(--bg);
-    width: 50%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    -webkit-animation-name: animatetop;
-    -webkit-animation-duration: 0.4s;
-    animation-name: animatetop;
-    animation-duration: 0.4s
-}
-
-/* Add Animation */
-@-webkit-keyframes animatetop {
-    from {
-        top: -300px;
-        opacity: 0
-    }
-
-    to {
-        top: 0;
-        opacity: 1
-    }
-}
-
-@keyframes animatetop {
-    from {
-        top: -300px;
-        opacity: 0
-    }
-
-    to {
-        top: 0;
-        opacity: 1
-    }
-}
-
-/* The Close Button */
-.close {
-    color: white;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.modal-header1 {
-    padding: 2px 16px;
-    background-color: var(--bg);
-    color: white;
-    text-align: center;
-}
-
-.modal-body1 {
-    padding: 2px 16px;
-}
-
-.modal-footer1 {
-    padding: 2px 16px;
-    background-color: var(--bg);
-    color: white;
-    text-align: center;
-}
-
 @media screen and (max-width: 1200px) and (min-width: 901px) {
     .container-logo {
         width: 35%;
@@ -394,12 +297,21 @@ nav h1 {
     .container-form {
         width: 65%;
     }
+    .container-link div:first-child{
+        width: 35%;
+        margin: 0;
+    }
+    .container-link div:last-child {
+        margin-top: 1rem;
+    }
 }
+
 
 @media screen and (max-width: 900px) and (min-width: 701px) {
     .container-login {
         flex-direction: column;
         gap: 3rem;
+        padding-top: 8vh;
     }
 
     .container-form {
@@ -416,11 +328,12 @@ nav h1 {
     }
 }
 
-@media screen and (max-width: 700px) and (min-width: 200px) {
+@media screen and (max-width: 700px) and (min-width: 305px) {
     .container-login {
         flex-direction: column;
         justify-content: flex-start;
         gap: 0;
+        padding-top: 10vh;
     }
 
     .container-form {
@@ -432,12 +345,58 @@ nav h1 {
         margin-top: 2rem;
     }
 
+    .container-form .form form {
+        padding-bottom: 0;
+    }
+
     .container-form .form {
         box-shadow: none;
         width: 100%;
     }
-
     .container .container-link div:last-child {
         border-top: none;
+    }
+    .container .container-link div:first-child {
+        height: 0;
+        width: 0;
+        margin: 0;
+    }
+    .container-link div:last-child{
+        margin: 0 auto;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .container-login {
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 0;
+        padding-top: 10vh;
+    }
+    .container-logo {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    .container-form .form {
+        box-shadow: none;
+        width: 100%;
+        padding: 1rem 0;
+    }
+    .container-form {
+        border: none;
+        width: 100%;
+    }
+    .container .container-link div:last-child {
+        border-top: none;
+    }
+    .container .container-link div:first-child {
+        height: 0;
+        width: 0;
+        margin: 0;
+    }
+    .container-link div:last-child{
+        margin: 0 auto;
+        width: 100%;
     }
 }

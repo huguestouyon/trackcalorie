@@ -6,9 +6,7 @@
         <h1>TrackCalorie</h1>
     </div>
     <div class="btn-nav">
-        <button id="add-kal"><i class="fa-regular fa-plus"></i></button> <!-- ADD -->
-        <button id="del-kal"><i class="fa-solid fa-minus"></i></button> <!-- DELETE -->
-        <button id="setting-kal"><i class="fa-sharp fa-solid fa-gears"></i></button> <!-- SETTING -->
-        <button id="user-kal"><i class="fa-solid fa-user"></i></button> <!-- USER -->
+    <button data-bs-toggle="modal" href="#exampleModalToggle" role="button"><i class="fa-solid fa-robot"></i></button> <!-- Ouvrir un modal -->
+    <a href="deconnexion.php" id="del-kal"><button><i class="fa-solid fa-power-off"></i></button></a> <!-- Déconnexion -->
     </div>
 </nav>
