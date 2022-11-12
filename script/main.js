@@ -4,9 +4,9 @@ let dateModi = ""
 let kalDate = document.querySelector("#kaldate")
 let dateSoustrait = isDate.getDate()-10
 if(dateSoustrait < 10) {
-    dateModi = "0"+dateSoustrait
+    dateModi = "0"+(dateSoustrait+1)
 } else {
-    dateModi = dateSoustrait
+    dateModi = dateSoustrait+1
 }
 
 
