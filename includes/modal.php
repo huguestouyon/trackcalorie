@@ -61,15 +61,21 @@
                             </div>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text input-br-none"><i class="fa-regular fa-envelope"></i></span>
+                                    <span class="input-group-text input-br-none"><i class="fa-solid fa-cake-candles"></i></span>
                                 </div>
-                                <input type="email" class="form-control" placeholder="Adresse Email">
+                                <input type="date" class="form-control" placeholder="Date de naissance">
                             </div>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text input-br-none"><i class="fa-sharp fa-solid fa-phone"></i></span>
                                 </div>
-                                <input type="text" class="form-control" placeholder="Numéro de téléphone">
+                                <input type="text" class="form-control" placeholder="Numéro de téléphone" max="" min="0">
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text input-br-none"><i class="fa-sharp fa-solid fa-medal"></i></span>
+                                </div>
+                                <input type="number" class="form-control" placeholder="Nombre d'heure(s) de sport hebdomadaire">
                             </div>
                             <div class="row mb-2">
                                 <div class="col">

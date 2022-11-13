@@ -33,8 +33,16 @@
                 if(!password_verify($_POST["pswd"], $user["pass"])) {
                     $_SESSION["error"][] = "L'adresse email ou le passe est incorrect";
                 }
+                $sql = "SELECT * FROM `membres` WHERE `email` = :mail";
+                $query = $db->prepare($sql);
+                $query->bindValue(":mail", $_POST["newemail1"], PDO::PARAM_STR);
+                $query->execute();
+                $user = $query->fetch();
+                if($user) {
+                    $_SESSION["error"][] = "Nouvelle adresse email déjà utilisé";
+                }
                 if($_SESSION["error"] === []) {
-                    $sql = "UPDATE `membres` SET `email`=':newemail' WHERE `id`=':idmembre'";
+                    $sql = "UPDATE `membres` SET `email`= :newemail WHERE `id`=:idmembre";
                     echo $_POST["newemail1"];
                     var_dump($_SESSION["user"]["id"]);
                     $query = $db->prepare($sql);
