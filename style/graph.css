@@ -1,0 +1,16 @@
+#my-chart .column {
+    height: 300px;
+    max-width: 600px;
+}
+
+#chart1 tbody{
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: inset -5px -5px 10px rgba(0, 0, 0, .5), 5px 5px 5px rgba(0, 0, 0, .5);
+}
+
+#chart1 tbody td{
+    margin-inline: 10px;
+    border-radius: 10px;
+    box-shadow: inset -5px -5px 10px rgba(0, 0, 0, .5), 5px 5px 5px rgba(0, 0, 0, .5);
+}

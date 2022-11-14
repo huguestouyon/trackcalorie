@@ -82,6 +82,100 @@ nav h1 {
     font-size: 3rem;
 }
 
+/***** PAGE inscription.php *****/
+
+/* .radio-container{
+    display: flex;
+    justify-content: center;
+}
+.btn-check {
+    opacity: 0;
+    position: fixed;
+    width: 0;
+}
+.btn-check:checked + .labelradio {
+    transition: all 0.2s ease-out;
+    background-color: rgb(255, 246, 122);
+
+}
+.labelradio {
+    display: inline-block;
+    background-color: #ddd;
+    padding: 10px 39px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 20px;
+    letter-spacing: 0.01em;
+    color: rgba(0, 0, 0, 0.4);
+}
+.labelr1{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.labelr2{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.labelradio:hover {
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+.line {
+    border-right: 1px solid #000000;
+}
+.icony {
+    color: var(--yel);
+}
+
+.iconx {
+    color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    padding-left: 25px;
+}
+
+.iconx2 {
+    color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    padding-left: 10px;
+}
+
+.confirmer {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 20px;
+    align-items: center;
+    letter-spacing: 0.01em;
+    color: rgba(0, 0, 0, 0.4);
+    width: 70%;
+    border-radius: 25px;
+    border: solid 2px rgba(0, 0, 0, 0.4);
+    height: 2.2em;
+    background-color: var(--casegrey);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.confirmer:hover{
+    cursor: pointer;
+    background-color: #f0f0f0;
+}
+.confirmer:active, .confirmer:active .iconx,.confirmer:active .iconx2{
+    transition: all 0.2s ease-out;
+    border-color: #FFC700;
+    color: #FFC700;
+}
+
+.link2{
+    margin-top: 1%;
+} */
+
+/* .form-inscription {
+    margin-top: -11.5vh;    
+} */
+
+
 /***** PAGE connexion.php *****/
 
 .title {
@@ -134,6 +228,8 @@ nav h1 {
     padding: 1rem;
 }
 
+
+
 .input-container {
     display: -ms-flexbox;
     /* IE10 */
@@ -161,7 +257,6 @@ nav h1 {
     border-radius: 0 1em 1em 0;
     color: var(--grey);
     padding-right: 5em;
-
 }
 
 .btn-confirm {

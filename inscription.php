@@ -61,11 +61,12 @@ if (!empty($_POST)) {
             // Hasher le pass
             $pass = password_hash($_POST["pass"], PASSWORD_ARGON2ID);
             // Se connecter à la base de données
+            $email = strtolower($_POST["email"]);
             require_once "includes/connect.php";
             // email unique
             $sql = "SELECT * FROM `membres` WHERE email = ?";
             $query = $db->prepare($sql);
-            $query->bindValue(1, $_POST["email"], PDO::PARAM_STR);
+            $query->bindValue(1, $email, PDO::PARAM_STR);
             $query->execute();
             $verifmail = $query->fetch();
             if ($verifmail) {
@@ -73,14 +74,11 @@ if (!empty($_POST)) {
             }
 
             if ($_SESSION["error"] === []) {
-
-
                 $sql = "INSERT INTO `membres` (`nom`, `prenom`, `email`, `pass`, `taille`, `poids`, `sexe`, `role`) VALUES (:nom, :prenom, :email, '$pass', :taille, :poids, :sexe, '[\"ROLE_USER\"]')";
-
                 $query = $db->prepare($sql);
                 $query->bindValue(":nom", $lastname, PDO::PARAM_STR);
                 $query->bindValue(":prenom", $name, PDO::PARAM_STR);
-                $query->bindValue(":email", $_POST["email"], PDO::PARAM_STR);
+                $query->bindValue(":email", $email, PDO::PARAM_STR);
                 $query->bindValue(":taille", $_POST["height"], PDO::PARAM_STR);
                 $query->bindValue(":poids", $_POST["weight"], PDO::PARAM_STR);
                 $query->bindValue(":sexe", $_POST["sex"], PDO::PARAM_STR);
@@ -92,7 +90,7 @@ if (!empty($_POST)) {
                     "id" => $id,
                     "name" => $name,
                     "lastname" => $lastname,
-                    "email" => $_POST["email"],
+                    "email" => $email,
                     "height" => $_POST["height"],
                     "weight" => $_POST["weight"],
                     "sex" => $_POST["sex"]
@@ -109,7 +107,16 @@ if (!empty($_POST)) {
 $title = "Inscription";
 require_once "includes/header.php";
 ?>
-<h1 class="text-center"> Track Calorie </h1>
+
+<div class="container">
+    <div class="container-index-inscription">
+        <div class="container-logo">
+            <img src="img/Logo calorie.svg" alt="">
+            <h1 class="title">Track Calorie</h1>
+        </div>
+
+
+
 <?php
     if(isset($_SESSION["error"])) {
         foreach($_SESSION["error"] as $message) {
@@ -120,38 +127,52 @@ require_once "includes/header.php";
         unset($_SESSION["error"]);
     }
 ?>
-<form action="" method="POST">
-    <div>
-        <input type="text" name="lastname" id="lastname" placeholder="Nom" required>
-    </div>
-    <div>
-        <input type="text" name="name" id="name" placeholder="Prénom" required>
-    </div>
-    <div>
-        <input type="email" name="email" id="email" placeholder="Email" required>
-    </div>
-    <div>
-        <input type="password" name="pass" id="pass" placeholder="Mot de passe" required>
-    </div>
-    <div>
-        <input type="password" name="confirmpass" id="confirmpass" placeholder="Confirmation" required>
-    </div>
-    <div>
-        <input type="number" name="height" id="height" placeholder="Taille (cm)" min="100" max="220" required>
-    </div>
-    <div>
-        <input type="number" name="weight" id="weight" placeholder="Poids (kg)" min="30" max="200" required>
-    </div>
-    <div>
-        <input type="radio" class="btn-check" name="sex" id="option1" autocomplete="off" value="man" checked>
-        <label class="btn btn-light" for="option1">Homme</label>
+<div class="container-form form-inscription">
+<div class="form">
 
-        <input type="radio" class="btn-check" name="sex" id="option2" autocomplete="off" value="women">
-        <label class="btn btn-light" for="option2">Femme</label>
-    </div>
-    <button type="submit" class="btn btn-light mt-2">Créer un compte</button>
-</form>
+    <form action="" method="POST">
+        <div class="input-container">
 
+            <input type="text" name="lastname" id="lastname" placeholder="Nom" class="input-field" required>
+        </div>
+        <div class="input-container">
+            <input type="text" name="name" id="name" placeholder="Prénom" class="input-field" required>
+        </div>
+        <div class="input-container">
+            <input type="email" name="email" id="email" placeholder="Email" class="input-field" required>
+        </div>
+        <div class="input-container">
+            <input type="password" name="pass" id="pass" placeholder="Mot de passe" class="input-field" required>
+        </div>
+        <div class="input-container">
+            <input type="password" name="confirmpass" id="confirmpass" placeholder="Confirmation" class="input-field" required>
+        </div>
+        <div class="input-container">
+            <input type="number" name="height" id="height" placeholder="Taille (cm)" min="100" max="220" class="input-field" required>
+        </div>
+        <div class="input-container">
+            <input type="number" name="weight" id="weight" placeholder="Poids (kg)" min="30" max="200" class="input-field" required>
+        </div>
+        <div class="radio-container">
+            <input type="radio" class="btn-check" name="sex" id="option1" autocomplete="off" value="man" checked>
+            <label class="btn btn-light labelradio labelr1" for="option1">Homme</label>
+            <div class="line"></div>
+            <input type="radio" class="btn-check" name="sex" id="option2" autocomplete="off" value="women">
+            <label class="btn btn-light labelradio labelr2" for="option2">Femme</label>
+        </div>
+        
+        <button type="submit" class="btn btn-light mt-2 confirmer">Confirmer</button>
+    </form>
+</div>    
+</div>
+</div>
+<div class="container-link link2">
+    <div></div>
+    <div>
+        <a href="connexion.php">Se connecter</a>
+    </div>
+</div>
+</div>
 <?php
 require_once "includes/footer.php";
 ?>
