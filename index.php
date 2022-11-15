@@ -4,11 +4,6 @@ if (!isset($_SESSION["user"])) {
     header("Location: connexion.php");
     exit;
 }
-//timeoutlogout();
-if(isset($_SESSION["LAST_ACTIVITY"]) && time() - $_SESSION["LAST_ACTIVITY"] > 3600) {
-    header("Location: deconnexion.php");
-}
-    $_SESSION["LAST_ACTIVITY"] = time();
 $name = $_SESSION['user']['name'];
 $lastname = $_SESSION['user']['lastname'];
 
@@ -39,14 +34,15 @@ require_once "includes/header.php";
 require_once "includes/nav.php"; ?>
 <div class="container-index">
     <div class="container-index-title">
-        <h2 class="title-imc"><?= "$imc" ?></h2>
-        <h3 class="title-imc-text"><?= "$imcdata" ?></h3>
+        <h2><?= "$imc" ?></h2>
+        <h3><?= "$imcdata" ?></h3>
     </div>
     <?php
     require_once "includes/errorResp.php";
     require_once "includes/validResp.php";
     ?>
 </div>
+
 <h2>Profil de <?= "$name $lastname" ?></h2>
 
 <div>

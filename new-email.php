@@ -43,6 +43,8 @@
                 }
                 if($_SESSION["error"] === []) {
                     $sql = "UPDATE `membres` SET `email`= :newemail WHERE `id`=:idmembre";
+                    echo $_POST["newemail1"];
+                    var_dump($_SESSION["user"]["id"]);
                     $query = $db->prepare($sql);
                     $query->bindValue(":newemail", $_POST["newemail1"], PDO::PARAM_STR);
                     $query->bindValue(":idmembre", $_SESSION["user"]["id"], PDO::PARAM_STR);

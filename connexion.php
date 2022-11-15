@@ -57,7 +57,7 @@ if (!empty($_POST)) {
 $title = "Connexion";
 require_once "includes/header.php";
 ?>
-<div class="container">
+<div class="container container-connexion">
 <div class="container-login">
     <div class="container-logo">
         <img src="img/Logo calorie.svg" alt="Logo">
@@ -89,9 +89,9 @@ require_once "includes/header.php";
             
         </div>
     </div>
-    <div class="container-link">
-        <div></div>
-        <div>
+    <div class="container-link container-link-inscription">
+        <div class="lineconnexion"></div>
+        <div class="lastlineconnexion">
             <a href="#">Mot de passe oublié</a>
             <a href="inscription.php">Créer un compte</a>
         </div>
