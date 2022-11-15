@@ -491,7 +491,13 @@ nav h1 {
     display: flex;
 }
 
-.container .container-link div {
+.container-inscription .container-link div {
+    height: 100%;
+    width: 25%;
+    margin: 0 auto;
+}
+
+.container-connexion .container-link div {
     height: 100%;
     width: 25%;
     margin: 0 auto;
@@ -639,7 +645,10 @@ nav h1 {
         box-shadow: none;
         width: 100%;
     }
-    .container .container-link div:last-child {
+    .container-inscription .container-link div:last-child {
+        border-top: none;
+    }
+    .container-connexion .container-link div:last-child {
         border-top: none;
     }
     .container .container-link .lineconnexion {
@@ -673,7 +682,10 @@ nav h1 {
         border: none;
         width: 100%;
     }
-    .container .container-link div:last-child {
+    .container-inscription .container-link div:last-child {
+        border-top: none;
+    }
+    .container-connexion .container-link div:last-child {
         border-top: none;
     }
     .container .container-link .lineconnexion {
@@ -686,3 +698,21 @@ nav h1 {
         width: 100%;
     }
 }
+
+/* mdp oublie */
+.pmdpoublie {
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 20px;
+letter-spacing: 0.01em;
+color: rgba(255, 255, 255, 0.7);
+    }
+
+.container-mdpoublie .container-link div {
+    height: 100%;
+    width: 25%;
+    margin: 1.5% auto;
+}
+

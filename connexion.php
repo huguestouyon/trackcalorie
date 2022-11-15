@@ -68,12 +68,12 @@ require_once "includes/header.php";
             <div class="form">
                 <form action="" method="POST">
                     <div class="input-container">
-                        <i class="fa fa-user icon"></i>
-                        <input type="email" name="email" id="email" class="input-field" placeholder="Adresse de messagerie" required>
+                        <i class="fa fa-user icon-inscription"></i>
+                        <input type="email" name="email" id="email" class="input-field-inscription" placeholder="Adresse de messagerie" required>
                     </div>
                     <div class="input-container">
-                        <i class="fa-sharp fa-solid fa-lock icon"></i>
-                        <input type="password" name="pass" id="pass" class="input-field" placeholder="Mot de passe" required>
+                        <i class="fa-sharp fa-solid fa-lock icon-inscription"></i>
+                        <input type="password" name="pass" id="pass" class="input-field-inscription" placeholder="Mot de passe" required>
                     </div>
                     <?php
                     if(isset($_SESSION["error"])) {
@@ -92,11 +92,11 @@ require_once "includes/header.php";
     <div class="container-link container-link-inscription">
         <div class="lineconnexion"></div>
         <div class="lastlineconnexion">
-            <a href="#">Mot de passe oublié</a>
+            <a href="mdpoublie.php">Mot de passe oublié</a>
             <a href="inscription.php">Créer un compte</a>
         </div>
+        </div>
     </div>
-</div>
 <script src="script/connect.js"></script>
 <?php
 require_once "includes/footer.php";
