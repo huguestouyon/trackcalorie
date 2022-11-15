@@ -236,6 +236,9 @@ nav h1 {
     color: var(--grey);
     padding-right: 5em;
 }
+.input-field-inscription:-webkit-autofill {
+    background-color: var(--casegrey);
+}
 .container .container-link .linkinscription {
     height: 100%;
     width: 25%;
@@ -388,7 +391,6 @@ nav h1 {
     }
 }
 /***** PAGE connexion.php *****/
-
 .title {
     color: var(--yel);
     font-family: 'Grenze', sans-serif;
