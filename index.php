@@ -16,7 +16,7 @@ $lastname = $_SESSION['user']['lastname'];
 $height = $_SESSION["user"]["height"];
 $height = $height * 0.01; // Passer la taille de cm à m
 $weight = $_SESSION["user"]["weight"];
-
+// TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST
 //IMC
 $imc = round($weight / ($height * $height), 1); // Calcul de l'IMC adulte arrondit à 1 chiffre après la virgule
 if ($imc <= 18.5) {
