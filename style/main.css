@@ -1,3 +1,5 @@
+/* Salut */
+
 * {
     margin: 0;
     padding: 0;
@@ -410,11 +412,6 @@ nav h1 {
     gap: 2rem;
 }
 
-.container-logo img {
-    width: 33%;
-    height: auto;
-}
-
 .container-form {
     width: 50%;
     display: flex;
@@ -581,10 +578,6 @@ nav h1 {
 @media screen and (max-width: 1200px) and (min-width: 901px) {
     .container-logo {
         width: 35%;
-    }
-
-    .container-logo img {
-        width: 45%;
     }
 
     .container-form {
