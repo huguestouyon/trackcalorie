@@ -35,3 +35,5 @@ if(imc.innerHTML > 30) {
     imc.style.backgroundColor = "#DC3912"
     textImc.innerHTML = "Obésité modérée"
 }
+
+

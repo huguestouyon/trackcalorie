@@ -1,16 +1,43 @@
-#my-chart .column {
-    height: 300px;
-    max-width: 600px;
+#chart-calorie .column {
+    height: 450px;
+    max-width: 400px;
 }
 
-#chart1 tbody{
+#chart-calorie tbody {
+    overflow-y: hidden;
     padding: 30px;
     border-radius: 10px;
     box-shadow: inset -5px -5px 10px rgba(0, 0, 0, .5), 5px 5px 5px rgba(0, 0, 0, .5);
 }
 
-#chart1 tbody td{
+#chart-calorie tbody td {
     margin-inline: 10px;
     border-radius: 10px;
     box-shadow: inset -5px -5px 10px rgba(0, 0, 0, .5), 5px 5px 5px rgba(0, 0, 0, .5);
+}
+
+#chart-calorie tbody th {
+    z-index: 1;
+}
+
+.data {
+    color: #FFF;
+}
+
+#chart-calorie th {
+    animation: spin-labels 4s linear;
+}
+
+@keyframes spin-labels {
+    0% {
+        transform: rotateX(0deg);
+    }
+
+    20% {
+        transform: rotateX(360deg);
+    }
+
+    60% {
+        transform: rotateX(360deg);
+    }
 }
