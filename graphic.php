@@ -1,7 +1,8 @@
 <?php
 session_start();
 require_once "includes/connect.php";
-$sql = "SELECT * FROM `calories` WHERE id_membre = 5 AND date >= DATE_ADD(CURDATE(), INTERVAL -10 DAY) AND date <= CURDATE() ORDER BY `date`";
+$id = $_SESSION["user"]["id"];
+$sql = "SELECT * FROM `calories` WHERE id_membre = '$id' AND date >= DATE_ADD(CURDATE(), INTERVAL -10 DAY) AND date <= CURDATE() ORDER BY `date`";
 $query = $db->prepare($sql);
 $query->execute();
 $data = $query->fetchAll();

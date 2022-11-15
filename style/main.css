@@ -1,3 +1,5 @@
+/* Salut */
+
 * {
     margin: 0;
     padding: 0;
@@ -10,6 +12,7 @@
     --light: #E8F0FE;
     --grey: #7C7C7C;
     --red: #ff0033;
+    --casegrey: #d9d9d9;
 }
 
 body {
@@ -18,12 +21,30 @@ body {
 
 }
 
+.container-inscription .container-link div:last-child {
+    border-top: 1px solid var(--grey);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-connexion .container-link div:last-child {
+    border-top: 1px solid var(--grey);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 footer {
     height: 10vh;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #6C757D;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
 
 footer svg {
@@ -34,6 +55,10 @@ footer svg {
 .error {
     color: var(--red);
     font-weight: bold;
+}
+
+.container {
+    height: 90vh;
 }
 
 .valid {
@@ -83,8 +108,31 @@ nav h1 {
 }
 
 /***** PAGE inscription.php *****/
-
-/* .radio-container{
+.form-inscription .form form {
+    padding: 1rem;
+}
+.form-inscription .form {
+    padding: 6% 13% 5%;
+    box-shadow: 0px 4px 21px rgba(0, 0, 0, 0.25);
+    text-align: center;
+}
+.container-index-inscription {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+}
+.container-logo-inscription {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    border-right: 1px solid rgba(124, 124, 124, 0.75);
+    margin-top: 20vh;
+}
+.radio-container{
     display: flex;
     justify-content: center;
 }
@@ -169,23 +217,182 @@ nav h1 {
 
 .link2{
     margin-top: 1%;
-} */
+}
 
-/* .form-inscription {
-    margin-top: -11.5vh;    
-} */
-
-
+.form-inscription2 {
+    width: 50%;
+}
+.form-inscription{
+    margin-top: 5vh;
+}
+.input-field-inscription {
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    background-color: var(--casegrey);
+    border: none;
+    border-left: 1px solid var(--bg);
+    border-radius: 0 1em 1em 0;
+    color: var(--grey);
+    padding-right: 5em;
+}
+.container .container-link .linkinscription {
+    height: 100%;
+    width: 25%;
+    margin: 45px auto 0;
+}
+.icon-inscription{    
+    padding: 10px;
+    background: var(--casegrey);
+    color: var(--yel);
+    min-width: 50px;
+    text-align: center;
+    border-radius: 1em 0 0 1em;}
+@media screen and (max-width: 2000px) and (min-width: 1536px) {
+    .form-inscription{
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    }
+}
+@media screen and (max-height: 820px) { 
+    .container .container-link .linkinscription {
+    margin: 35px auto 0; 
+    }
+}
+@media screen and (max-height: 800px) { 
+    .container .container-link .linkinscription {
+    margin: 25px auto 0; 
+    }
+}
+@media screen and (max-height: 790px) { 
+    .container .container-link .linkinscription {
+    margin: 15px auto 0; 
+    }
+}
+@media screen and (max-height: 780px) { 
+    .container .container-link .linkinscription {
+    margin: 5px auto 0; 
+    }
+}
+@media screen and (max-height: 768px) {
+    .container .container-link .linkinscription {
+        margin: 0 auto 0; 
+        }
+    footer {
+        display: none;
+    }
+}
+@media screen and (max-width: 1536px) and (min-width: 720px) {
+        .form-inscription {
+        height: 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+        .input-field-inscription {
+            width: 85%;
+            padding: 8px;
+        }
+        .icon-inscription {
+            padding: 8px;    
+        }
+        .confirmer-inscription {
+            height: 1.8em;
+        }
+        .labelradio-inscription{
+            padding: 5px 39px;
+        }
+        .container-inscription .container-link div {
+            margin: 45px auto 0;
+        }
+        .link2 {
+            margin-top: 0%;
+        }
+        }
+        @media screen and (max-width: 1200px) and (min-width: 901px) {
+        .container-inscription .container-link .lineinscription{
+            width: 50%;
+        }
+    }
+        @media screen and (max-width: 1000px) {
+            .form-inscription .form {
+                padding: 6% 10% 5%;
+                box-shadow: 0px 4px 21px rgba(0, 0, 0, 0.25);
+                text-align: center; }
+        }
+        @media screen and (max-width: 900px) and (min-width: 720px) {
+            .container-inscription .container-link .lineinscription {
+                width: 25%;
+            }
+            .form-inscription .form {
+                padding: 6% 2% 5%;
+                box-shadow: 0px 4px 21px rgba(0, 0, 0, 0.25);
+                text-align: center; }
+        }
+        @media screen and (min-width: 500px) and (max-width: 719px) {
+            .labelradio {
+                padding: 10px 0;
+                width: 100%;
+            }
+            .container-index-inscription {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+        }
+            .container-logo-inscription{
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+                border-right: none;
+                border-bottom: 1px solid rgba(124, 124, 124, 0.75);
+                margin-top: 5vh;
+                padding-bottom: 2vh;
+            }
+            .img-logo{
+                width: 140px;
+            }   
+            .container {
+                height: 134vh;
+            }
+            .container-inscription .container-link .linkinscription {
+                width: 25%;
+                margin: 36px 100% 0px;
+                border-top: 1px solid var(--grey);
+                display: flex;
+                flex-direction: column-reverse;
+            }
+            .container-inscription .container-link div:last-child {
+                border-top: 1px solid var(--grey);
+                display: flex;
+                flex-direction: column-reverse;
+        }
+            .link2{
+                justify-content: center;
+            }
+            .container-inscription .container-link a:last-child {
+                width: 94px;
+            }
+            .iconx{
+                display: none;
+            }
+    }
+@media screen and (min-width: 500px) and (max-width: 615px) {
+    .input-field-inscription{
+        padding-right: 0;
+    }
+}
 /***** PAGE connexion.php *****/
 
 .title {
     color: var(--yel);
     font-family: 'Grenze', sans-serif;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.75);
-}
-
-.container {
-    height: 90vh;
 }
 
 .container-login {
@@ -203,11 +410,6 @@ nav h1 {
     flex-direction: column;
     align-items: center;
     gap: 2rem;
-}
-
-.container-logo img {
-    width: 33%;
-    height: auto;
 }
 
 .container-form {
@@ -235,7 +437,7 @@ nav h1 {
     /* IE10 */
     display: flex;
     width: 100%;
-    margin-bottom: 2rem;
+    margin-bottom: 20px;
 }
 
 .icon {
@@ -293,13 +495,6 @@ nav h1 {
     height: 100%;
     width: 25%;
     margin: 0 auto;
-}
-
-.container .container-link div:last-child {
-    border-top: 1px solid var(--grey);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 .container .container-link a:first-child {
@@ -385,10 +580,6 @@ nav h1 {
         width: 35%;
     }
 
-    .container-logo img {
-        width: 45%;
-    }
-
     .container-form {
         width: 65%;
     }
@@ -413,11 +604,11 @@ nav h1 {
         border: none;
     }
 
-    .container .container-link div:first-child {
+    .container .container-link .lineconnexion {
         display: none;
     }
 
-    .container .container-link {
+    .container .container-link-inscription {
         justify-content: center;
         margin-top: 1rem;
     }
@@ -451,7 +642,7 @@ nav h1 {
     .container .container-link div:last-child {
         border-top: none;
     }
-    .container .container-link div:first-child {
+    .container .container-link .lineconnexion {
         height: 0;
         width: 0;
         margin: 0;
@@ -485,7 +676,7 @@ nav h1 {
     .container .container-link div:last-child {
         border-top: none;
     }
-    .container .container-link div:first-child {
+    .container .container-link .lineconnexion {
         height: 0;
         width: 0;
         margin: 0;

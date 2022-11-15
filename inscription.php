@@ -61,9 +61,9 @@ if (!empty($_POST)) {
             // Hasher le pass
             $pass = password_hash($_POST["pass"], PASSWORD_ARGON2ID);
             // Se connecter à la base de données
-            $email = strtolower($_POST["email"]);
             require_once "includes/connect.php";
             // email unique
+            $email= strtolower($_POST["email"]);
             $sql = "SELECT * FROM `membres` WHERE email = ?";
             $query = $db->prepare($sql);
             $query->bindValue(1, $email, PDO::PARAM_STR);
@@ -74,7 +74,10 @@ if (!empty($_POST)) {
             }
 
             if ($_SESSION["error"] === []) {
+
+
                 $sql = "INSERT INTO `membres` (`nom`, `prenom`, `email`, `pass`, `taille`, `poids`, `sexe`, `role`) VALUES (:nom, :prenom, :email, '$pass', :taille, :poids, :sexe, '[\"ROLE_USER\"]')";
+
                 $query = $db->prepare($sql);
                 $query->bindValue(":nom", $lastname, PDO::PARAM_STR);
                 $query->bindValue(":prenom", $name, PDO::PARAM_STR);
@@ -108,10 +111,10 @@ $title = "Inscription";
 require_once "includes/header.php";
 ?>
 
-<div class="container">
+<div class="container-inscription container">
     <div class="container-index-inscription">
-        <div class="container-logo">
-            <img src="img/Logo calorie.svg" alt="">
+        <div class="container-logo-inscription">
+            <img src="img/Logo calorie.svg" alt="Logo" class="img-logo">
             <h1 class="title">Track Calorie</h1>
         </div>
 
@@ -127,48 +130,53 @@ require_once "includes/header.php";
         unset($_SESSION["error"]);
     }
 ?>
-<div class="container-form form-inscription">
-<div class="form">
-
-    <form action="" method="POST">
-        <div class="input-container">
-
-            <input type="text" name="lastname" id="lastname" placeholder="Nom" class="input-field" required>
-        </div>
-        <div class="input-container">
-            <input type="text" name="name" id="name" placeholder="Prénom" class="input-field" required>
-        </div>
-        <div class="input-container">
-            <input type="email" name="email" id="email" placeholder="Email" class="input-field" required>
-        </div>
-        <div class="input-container">
-            <input type="password" name="pass" id="pass" placeholder="Mot de passe" class="input-field" required>
-        </div>
-        <div class="input-container">
-            <input type="password" name="confirmpass" id="confirmpass" placeholder="Confirmation" class="input-field" required>
-        </div>
-        <div class="input-container">
-            <input type="number" name="height" id="height" placeholder="Taille (cm)" min="100" max="220" class="input-field" required>
-        </div>
-        <div class="input-container">
-            <input type="number" name="weight" id="weight" placeholder="Poids (kg)" min="30" max="200" class="input-field" required>
-        </div>
+<div class="form-inscription form-inscription2">
+    <div class="form form-inscription">
+        <form action="" method="POST">
+            <div class="input-container">
+                <i class="fa fa-user icon-inscription"></i>
+                <input type="text" name="lastname" id="lastname" placeholder="Nom" class="input-field-inscription" required>
+            </div>
+            <div class="input-container">
+                <i class="fa fa-user icon-inscription"></i>
+                <input type="text" name="name" id="name" placeholder="Prénom" class="input-field-inscription" required>
+            </div>
+            <div class="input-container">
+                <i class="fa-solid fa-envelope icon-inscription"></i>
+                <input type="email" name="email" id="email" placeholder="Email" class="input-field-inscription" required>
+            </div>
+            <div class="input-container">
+                <i class="fa-sharp fa-solid fa-lock icon-inscription"></i>  
+                <input type="password" name="pass" id="pass" placeholder="Mot de passe" class="input-field-inscription" required>
+            </div>
+            <div class="input-container">
+                <i class="fa-sharp fa-solid fa-lock icon-inscription"></i>    
+                <input type="password" name="confirmpass" id="confirmpass" placeholder="Confirmation" class="input-field-inscription" required>
+            </div>
+            <div class="input-container">
+                <i class="fa-solid fa-ruler icon-inscription"></i>
+                <input type="number" name="height" id="height" placeholder="Taille (cm)" min="100" max="220" class="input-field-inscription" required>
+            </div>
+            <div class="input-container">
+                <i class="fa-solid fa-weight-hanging icon-inscription"></i>
+                <input type="number" name="weight" id="weight" placeholder="Poids (kg)" min="30" max="200" class="input-field-inscription" required>
+            </div>
         <div class="radio-container">
             <input type="radio" class="btn-check" name="sex" id="option1" autocomplete="off" value="man" checked>
-            <label class="btn btn-light labelradio labelr1" for="option1">Homme</label>
-            <div class="line"></div>
+                <label class="btn btn-light labelradio labelradio-inscription labelr1" for="option1"><i class="fa-solid fa-mars icony"></i><br>Homme</label>
+                    <div class="line"></div>
             <input type="radio" class="btn-check" name="sex" id="option2" autocomplete="off" value="women">
-            <label class="btn btn-light labelradio labelr2" for="option2">Femme</label>
+                <label class="btn btn-light labelradio labelradio-inscription labelr2" for="option2"><i class="fa-solid fa-venus icony"></i><br>Femme</label>
         </div>
-        
-        <button type="submit" class="btn btn-light mt-2 confirmer">Confirmer</button>
+        <br>
+        <button type="submit" class="btn btn-light mt-2 confirmer confirmer-inscription">Confirmer<i class="fa-solid fa-arrow-right iconx"></i></button>
     </form>
 </div>    
 </div>
 </div>
-<div class="container-link link2">
-    <div></div>
-    <div>
+<div class="link2 container-link ">
+    <div class="lineinscription"></div>
+    <div class="linkinscription">
         <a href="connexion.php">Se connecter</a>
     </div>
 </div>
