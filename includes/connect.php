@@ -1,8 +1,8 @@
 <?php
     $dbname = "trackcalorie";
     $dbhost = "localhost";
-    $dbpass = "Greta1234!";
-    $dbuser = "greta";
+    $dbpass = "root";
+    $dbuser = "root";
     try {
         $dsn = "mysql:dbname=".$dbname.";host=".$dbhost;
         $db = new PDO($dsn, $dbuser, $dbpass);

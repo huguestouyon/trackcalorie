@@ -5,10 +5,10 @@ if (!isset($_SESSION["user"])) {
     exit;
 }
 //timeoutlogout();
-if(isset($_SESSION["LAST_ACTIVITY"]) && time() - $_SESSION["LAST_ACTIVITY"] > 3600) {
+if (isset($_SESSION["LAST_ACTIVITY"]) && time() - $_SESSION["LAST_ACTIVITY"] > 3600) {
     header("Location: deconnexion.php");
 }
-    $_SESSION["LAST_ACTIVITY"] = time();
+$_SESSION["LAST_ACTIVITY"] = time();
 $name = $_SESSION['user']['name'];
 $lastname = $_SESSION['user']['lastname'];
 
@@ -53,9 +53,9 @@ require_once "includes/nav.php"; ?>
     <?php
     require_once "includes/graph.php";
     ?>
-    <div id="chartContainer" style="height: 370px; width: 50%;"></div>
 </div>
 
+<?php require_once "includes/graphic.php"; ?>
 
 <?php include_once "includes/modal.php"; ?>
 
