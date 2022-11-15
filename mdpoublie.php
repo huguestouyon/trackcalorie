@@ -17,11 +17,11 @@ require_once "includes/header.php";
                 <form action="" method="POST">
                     <div class="input-container">
                         <i class="fa fa-user icon-inscription"></i>
-                        <input type="email" name="email" id="email" class="input-field-inscription" placeholder="Adresse de messagerie" required>
+                        <input type="email" name="email" id="email" class="input-field-mdpoublie" placeholder="Adresse de messagerie" required>
                     </div>
                         <br>
                         <br>
-                    <button type="submit" class="btn btn-light mt-2 confirmer confirmer-inscription">Confirmer<i class="fa-solid fa-arrow-right iconx"></i></button>
+                    <button type="submit" class="btn btn-light mt-2 confirmer confirmer-mdpoublie">Confirmer<i class="fa-solid fa-arrow-right iconx iconmdpoublie"></i></button>
                 </form>
             </div>
         </div>
