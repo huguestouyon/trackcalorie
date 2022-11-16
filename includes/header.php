@@ -15,7 +15,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous" defer></script>
     <link rel="stylesheet" href="../../trackcalorie/style/charts.min.css">
     <link rel="stylesheet" href="../../trackcalorie/style/graph.css">
-    <script src="../../trackcalorie/script/chartcalorie.js" defer></script>
     <?php endif?>
     <link rel="stylesheet" href="../../trackcalorie/style/main.css">
     

@@ -16,7 +16,6 @@ $lastname = $_SESSION['user']['lastname'];
 $height = $_SESSION["user"]["height"];
 $height = $height * 0.01; // Passer la taille de cm à m
 $weight = $_SESSION["user"]["weight"];
-// TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST
 //IMC
 $imc = round($weight / ($height * $height), 1); // Calcul de l'IMC adulte arrondit à 1 chiffre après la virgule
 if ($imc <= 18.5) {
@@ -49,17 +48,20 @@ require_once "includes/nav.php"; ?>
 </div>
 <h2>Profil de <?= "$name $lastname" ?></h2>
 
-<div>
+<!-- <div>
     <?php
-    require_once "includes/graph.php";
-    ?>
+    //require_once "includes/graph.php";
+    //require_once "includes/graph.php";
+?>
+</div> -->
+<div>
+    <?php include_once "includes/graphic.php" ?>
 </div>
 
 <?php require_once "includes/graphic.php"; ?>
-
 <?php include_once "includes/modal.php"; ?>
 
-
+<script src="../../trackcalorie/script/chartcalorie.js"></script>
 <script src="script/main.js"></script>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 <?php

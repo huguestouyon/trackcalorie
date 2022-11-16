@@ -6,20 +6,24 @@ $query = $db->prepare($sql);
 $query->execute();
 $data = $query->fetchAll();
 ?>
-<div id="chart-calorie">
 
-    <!-- show-primary-axis -->
-    <table class="charts-css column multiple show-labels show-heading show-data-on-hover" id="chart-calorie">
-        <caption> Calories par Jour </caption>
-        <tbody>
+<html lang="en">
 
-            <?php foreach ($data as $key) { ?>
-                <tr>
-                    <th scope="row"> <?= date('d/m/Y', strtotime($key["date"])) ?> </th>
-                    <td style="--size: <?= $key["calorie"] / 10000 ?>"><span class="data"><?= $key["calorie"] ?></span></td>
-                </tr><?php
+
+
+
+    <div id="chart-calorie">
+
+<!-- show-primary-axis -->
+        <table class="charts-css column multiple show-labels show-heading show-data-on-hover" id="chart-calorie">
+            <caption> Calories par Jour </caption>
+            <tbody>
+
+                    <?php foreach ($data as $key) { ?>
+                        <tr><th scope="row"> <?= date('d/m/Y', strtotime($key["date"])) ?> </th>
+                        <td style="--size: <?= $key["calorie"]/10000 ?>"><span class="data"><?= $key["calorie"] ?></span></td></tr><?php
                     } ?>
 
-        </tbody>
-    </table>
-</div>
+            </tbody>
+        </table>
+    </div>

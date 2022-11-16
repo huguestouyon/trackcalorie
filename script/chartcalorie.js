@@ -2,8 +2,9 @@
 let chart = document.querySelectorAll("span")
 let row = document.querySelectorAll("td")
 let i = 0
+console.log();
 chart.forEach(element => {
-    console.log(element.length)
+    console.log(chart.length)
     if(element.innerHTML <= 6000) {
         row[i].style.background = "#32CD32";
     }
