@@ -94,7 +94,7 @@ require_once "includes/header.php";
         <div class="lastlineconnexion">
             <a href="mdpoublie.php">Mot de passe oublié</a>
             <a href="inscription.php">Créer un compte</a>
-        </div>
+        </div>      
         </div>
     </div>
 <script src="script/connect.js"></script>

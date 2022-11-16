@@ -26,6 +26,7 @@ if(imc.innerHTML < 18.5) {
 if(imc.innerHTML >=18.5 && imc.innerHTML <= 25) {
     imc.style.backgroundColor = "#109618"
     textImc.innerHTML = "Corpulence normale"
+    textImc.style.marginLeft = "70px";
 }
 if(imc.innerHTML > 25 && imc.innerHTML <= 30) {
     imc.style.backgroundColor = "#F90"
