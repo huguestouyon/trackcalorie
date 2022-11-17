@@ -10,6 +10,8 @@ body {
     box-sizing: border-box;
 }
 
+
+
 :root {
     --bg: #343A40;
     --yel: #FFC700;
@@ -22,6 +24,49 @@ body {
 body {
     background-color: var(--bg);
     font-family: 'Roboto', sans-serif;
+
+}
+.start-container {
+    background-color: var(--bg);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    animation: anim-start 2s;
+    animation-iteration-count: 1;
+}
+#chart-calorie {
+    animation: anim-hidden-start 2s;
+    animation-iteration-count: 1;
+}
+@keyframes anim-hidden-start{
+    from{visibility: hidden;}
+    to{visibility: hidden;}
+}
+.container-logo-start{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2em;
+}
+
+@keyframes anim-start { 
+    0% {
+        visibility: visible;
+    }
+    69%{ 
+        opacity: 1;
+    }
+    70% {
+        opacity: 0.5;
+    }
+    90%{
+        visibility: hidden;
+        opacity: 0;
+    }
 
 }
 
@@ -49,6 +94,8 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;
+    animation: anim-hidden-start 1.4s;
+    animation-iteration-count: 1;
 }
 
 footer svg {
@@ -579,6 +626,8 @@ nav h1 {
     text-align: center;
     margin-top: 2em;
     width: 100%;
+    animation: anim-hidden-start 2s;
+    animation-iteration-count: 1;
 }
 
 .container-index h2 span:first-child {
