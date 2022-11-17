@@ -1,4 +1,23 @@
 <?php
+session_start();
+if (isset($_SESSION["user"])) {
+    header("Location: index.php");
+    exit;
+}
+
+if (!empty($_POST)) {
+    if(isset($_POST["email"]) && !empty($_POST["email"])) {
+
+    }
+    else {
+        
+    }
+
+}
+
+
+
+
 $title = "Mdpoublie";
 require_once "includes/header.php";
 ?>
@@ -16,11 +35,9 @@ require_once "includes/header.php";
                 <br>
                 <form action="" method="POST">
                     <div class="input-container">
-                        <i class="fa fa-user icon-inscription"></i>
-                        <input type="email" name="email" id="email" class="input-field-mdpoublie" placeholder="Adresse de messagerie" required>
+                        <i class="fa-solid fa-envelope icon-inscription"></i>
+                        <input type="email" name="mail" id="email" class="input-field-inscription" placeholder="Adresse de messagerie" required>
                     </div>
-                        <br>
-                        <br>
                     <button type="submit" class="btn btn-light mt-2 confirmer confirmer-mdpoublie">Confirmer<i class="fa-solid fa-arrow-right iconx iconmdpoublie"></i></button>
                 </form>
             </div>

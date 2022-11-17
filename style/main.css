@@ -1,4 +1,8 @@
 /* Salut */
+html, 
+body {
+    height: 100%;
+}
 
 * {
     margin: 0;
@@ -55,10 +59,6 @@ footer svg {
 .error {
     color: var(--red);
     font-weight: bold;
-}
-
-.container {
-    height: 90vh;
 }
 
 .valid {
@@ -337,13 +337,16 @@ nav h1 {
                 box-shadow: 0px 4px 21px rgba(0, 0, 0, 0.25);
                 text-align: center; }
         }
+       
+        @media screen and (max-height: 800px){
+            footer {
+                margin-top: 5vh;
+            }
+        }
         @media screen and (max-width: 719px) {
             .labelradio {
                 padding: 10px 0;
                 width: 100%;
-            }
-            footer {
-                position:unset;
             }
             .container-index-inscription {
                 width: 100%;
@@ -366,9 +369,7 @@ nav h1 {
             .img-logo{
                 width: 140px;
             }   
-            .container {
-                height: 134vh;
-            }
+
             .container-inscription .container-link .linkinscription {
                 width: 25%;
                 margin: 50px 100% 0px;
@@ -583,6 +584,7 @@ nav h1 {
     align-items: center;
     flex-direction: row;
     margin-bottom: 1rem;
+    margin-right: .5rem;
 }
 
 .container-index-title h2 {
@@ -771,5 +773,44 @@ color: rgba(255, 255, 255, 0.7);
     }
     .form-inscription .form form {
         padding: unset;
+    }
+}
+.absolute-IMC {
+position:absolute;
+margin-right: 15em;
+margin-top: 3em;
+color: white;
+}
+
+.Container-caption {
+    min-width: 122px;
+}
+@media screen and (min-width: 720px) {
+    .container .container-link {
+        height: 140px;
+    }
+    footer {
+        height: 70px;
+    }
+}
+@media screen and (max-width: 719px){
+    footer {
+        height: 70px;
+    }
+    .container .container-link {
+        width: 100%;
+        height: 140px;
+        display: flex;
+    }
+    .container-inscription .container-link .linkinscription {
+        margin-right: unset;
+        margin-top: unset;
+        margin-left: unset;
+        height: 50px;
+    }
+    .container-inscription .container-link .lineinscription {
+        height: unset;
+        margin: unset;
+        width: unset;
     }
 }

@@ -46,6 +46,8 @@ if(!empty($_POST)) {
                     $_SESSION["validinsertcalorie"] = ["Vos données ont bien été supprimé !"];
                     header("Location: index.php");
                 }
+            } else {
+                header("Location: index.php");
             }
         } else {
             $_SESSION["erreur"] = ["Une erreur est survenue"];

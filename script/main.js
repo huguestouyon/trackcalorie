@@ -32,9 +32,18 @@ if(imc.innerHTML > 25 && imc.innerHTML <= 30) {
     imc.style.backgroundColor = "#F90"
     textImc.innerHTML = "Surpoids"
 }
-if(imc.innerHTML > 30) {
+if(imc.innerHTML > 30 && imc.innerHTML <= 35) {
     imc.style.backgroundColor = "#DC3912"
     textImc.innerHTML = "Obésité modérée"
 }
+if(imc.innerHTML > 35 && imc.innerHTML <= 40) {
+    imc.style.backgroundColor = "#AB2A16"
+    textImc.innerHTML = "Obésité sévère"
+}
+if(imc.innerHTML > 40) {
+    imc.style.backgroundColor = "#811313"
+    textImc.innerHTML = "Obésité morbide"
+}
+
 
 

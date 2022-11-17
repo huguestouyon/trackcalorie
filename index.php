@@ -39,6 +39,7 @@ require_once "includes/nav.php"; ?>
 <div class="container-index">
     <div class="container-index-title">
         <h2 class="title-imc"><?= "$imc" ?></h2>
+        <p class="absolute-IMC">IMC</p>
         <h3 class="title-imc-text"><?= "$imcdata" ?></h3>
     </div>
     <?php
@@ -48,12 +49,6 @@ require_once "includes/nav.php"; ?>
 </div>
 <h2>Profil de <?= "$name $lastname" ?></h2>
 
-<!-- <div>
-    <?php
-    //require_once "includes/graph.php";
-    //require_once "includes/graph.php";
-?>
-</div> -->
 <div>
     <?php include_once "includes/graphic.php" ?>
 </div>
@@ -63,7 +58,6 @@ require_once "includes/nav.php"; ?>
 
 <script src="../../trackcalorie/script/chartcalorie.js"></script>
 <script src="script/main.js"></script>
-<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 <?php
 require_once "includes/footer.php";
 ?>

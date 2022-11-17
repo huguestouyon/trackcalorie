@@ -109,6 +109,7 @@ ol.charts-css li {
 .charts-css.show-heading caption {
   display: block;
   width: 100%;
+  min-width: 122px;
   height: var(--heading-size);
 }
 

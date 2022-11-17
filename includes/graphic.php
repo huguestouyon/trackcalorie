@@ -5,18 +5,14 @@ $sql = "SELECT * FROM `calories` WHERE id_membre = '$id' AND date >= DATE_ADD(CU
 $query = $db->prepare($sql);
 $query->execute();
 $data = $query->fetchAll();
+if (!empty($data)):
 ?>
-
-<html lang="en">
-
-
-
 
     <div id="chart-calorie">
 
 <!-- show-primary-axis -->
         <table class="charts-css column multiple show-labels show-heading show-data-on-hover" id="chart-calorie">
-            <caption> Calories par Jour </caption>
+            <caption class="Container-caption"> Calories par Jour </caption>
             <tbody>
 
                     <?php foreach ($data as $key) { ?>
@@ -27,3 +23,6 @@ $data = $query->fetchAll();
             </tbody>
         </table>
     </div>
+<?php 
+endif;
+?>
