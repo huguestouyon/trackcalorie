@@ -639,6 +639,8 @@ nav h1 {
     width: 100%;
     animation: anim-hidden-start 2s;
     animation-iteration-count: 1;
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 .container-index h2 span:first-child {
@@ -909,5 +911,25 @@ color: white;
     50% {opacity: 0.1;}
 }
 .space-after-graph {
-    
+    width: 100%;
+    height: 100px;
+}
+td {
+    max-height: 21em;
+}
+.profil-button{
+    border: none;
+    background: none;
+}
+.identity-card{
+    width: 10em;
+}
+.identity-card:hover{
+    filter: invert(82%) sepia(69%) saturate(4999%) hue-rotate(356deg) brightness(102%) contrast(109%);
+}
+.menu-profil{
+    background-color: var(--bg);
+    width: 100%;
+    height: 20em;
+    display: none;
 }

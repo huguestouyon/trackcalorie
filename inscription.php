@@ -76,7 +76,7 @@ if (!empty($_POST)) {
             if ($_SESSION["error"] === []) {
 
 
-                $sql = "INSERT INTO `membres` (`nom`, `prenom`, `email`, `pass`, `taille`, `poids`, `sexe`, `role`) VALUES (:nom, :prenom, :email, '$pass', :taille, :poids, :sexe, '[\"ROLE_USER\"]')";
+                $sql = "INSERT INTO `membres` (`nom`, `prenom`, `email`, `pass`, `taille`, `poids`, `sexe`, `role`, `sport`) VALUES (:nom, :prenom, :email, '$pass', :taille, :poids, :sexe, '[\"ROLE_USER\"]', 0)";
 
                 $query = $db->prepare($sql);
                 $query->bindValue(":nom", $lastname, PDO::PARAM_STR);
@@ -88,23 +88,27 @@ if (!empty($_POST)) {
 
                 $query->execute();
                 $id = $db->lastInsertId();
-
                 $_SESSION["user"] = [
                     "id" => $id,
                     "name" => $name,
                     "lastname" => $lastname,
                     "email" => $email,
-                    "height" => $_POST["height"],
-                    "weight" => $_POST["weight"],
-                    "sex" => $_POST["sex"]
+                    "height" => $height,
+                    "weight" => $weight,
+                    "sex" => $_POST["sex"],
+                    "tel" => null,
+                    "sport" => 0,
+                    "anniv" => null
                 ];
                 header("Location: index.php");
+
             }
         }
     } else {
         $_SESSION["error"] = ["Des valeurs sont manquantes"];
     }
 }
+
 ?>
 <?php
 $title = "Inscription";

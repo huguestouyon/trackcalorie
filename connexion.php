@@ -28,7 +28,7 @@ if (!empty($_POST)) {
                 $query->execute();
                 
                 $user = $query->fetch();
-                
+                // test
                 if (!$user) {
                     $_SESSION["error"][] = "Utilisateur ou mot de passe incorrect";
                 }
@@ -92,7 +92,6 @@ require_once "includes/header.php";
                     <button type="submit" class="btn-confirm">Me connecter <i class="fa-solid fa-arrow-right"></i></button>
                 </form>
             </div>
-            
         </div>
     </div>
     <div class="container-link container-link-inscription">
