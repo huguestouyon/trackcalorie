@@ -35,7 +35,14 @@ if ($imc <= 18.5) {
 $title = "Accueil";
 // HTML
 require_once "includes/header.php";
-require_once "includes/nav.php"; ?>
+?>
+<div class="start-container">
+<div class="container-logo-start container-logo-start-index">
+        <img src="img/Logo calorie.svg" alt="Logo">
+        <h1 class="title">Track Calorie</h1>
+    </div>
+</div>    
+<?php require_once "includes/nav.php"; ?>
 <div class="container-index">
     <div class="container-index-title">
         <h2 class="title-imc"><?= "$imc" ?></h2>
@@ -55,7 +62,7 @@ require_once "includes/nav.php"; ?>
 
 <?php require_once "includes/graphic.php"; ?>
 <?php include_once "includes/modal.php"; ?>
-
+<div class="space-after-graph"></div>
 <script src="../../trackcalorie/script/chartcalorie.js"></script>
 <script src="script/main.js"></script>
 <?php
