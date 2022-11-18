@@ -6,7 +6,6 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 
             </div>
-
             <div class="modal-body">
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item" role="presentation">
@@ -50,39 +49,43 @@
                     </div>
                     <div class="tab-pane fade" id="user" role="tabpanel" aria-labelledby="user-tab">
                         <h3 class="pt-3">Modifie tes données</h3>
-                        <form>
+                        <form action="updateinfo.php" method="post">
                             <div class="row mb-2">
                                 <div class="col">
-                                    <input type="text" class="form-control" placeholder="Prénom">
+                                    <input type="text" value=<?= "$name" ?> class="form-control" placeholder="Prénom" name="prenom">
                                 </div>
                                 <div class="col">
-                                    <input type="text" class="form-control" placeholder="Nom">
+                                    <input type="text" value=<?= "$lastname" ?> class="form-control" placeholder="Nom" name="nom">
                                 </div>
                             </div>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text input-br-none"><i class="fa-solid fa-cake-candles"></i></span>
                                 </div>
-                                <input type="date" class="form-control" placeholder="Date de naissance">
+                                <?php $anniv = isset($_SESSION["user"]["anniv"])?$_SESSION["user"]["anniv"]:'1990-01-01'; ?>
+                                <input type="date" name="birthday" value="<?= $anniv ?>" class="form-control" placeholder="Date de naissance">
                             </div>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text input-br-none"><i class="fa-sharp fa-solid fa-phone"></i></span>
                                 </div>
-                                <input type="text" class="form-control" placeholder="Numéro de téléphone" max="" min="0">
+                                <?php $tel = isset($_SESSION["user"]["tel"])?$_SESSION["user"]["tel"]:null; ?>
+                                <input type="tel" name="phonetel" value="<?= $tel ?>" class="form-control" max="10" min="0">
                             </div>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text input-br-none"><i class="fa-sharp fa-solid fa-medal"></i></span>
                                 </div>
-                                <input type="number" class="form-control" placeholder="Nombre d'heure(s) de sport hebdomadaire">
+                                <?php $sporthebdo = isset($_SESSION["user"]["sport"])?$_SESSION["user"]["sport"]:0; ?>
+                                <input type="number" name="sporthebdo" value=<?= "$sporthebdo" ?> class="form-control" placeholder="Nombre d'heure(s) de sport hebdomadaire" min="0" max="40">
                             </div>
                             <div class="row mb-2">
                                 <div class="col">
-                                    <input type="number" class="form-control" placeholder="Taille">
+                                    <?php $heightcm = $height*100; ?>
+                                    <input type="number" value= <?= "$heightcm" ?> name="height" class="form-control" placeholder="Taille">
                                 </div>
                                 <div class="col">
-                                    <input type="number" class="form-control" placeholder="Poids">
+                                    <input type="number" value= <?= "$weight" ?> name="weight" class="form-control" placeholder="Poids">
                                 </div>
                             </div>
                             <div class="pt-2 text-center">

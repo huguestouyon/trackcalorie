@@ -11,7 +11,17 @@ if (isset($_SESSION["LAST_ACTIVITY"]) && time() - $_SESSION["LAST_ACTIVITY"] > 3
 $_SESSION["LAST_ACTIVITY"] = time();
 $name = $_SESSION['user']['name'];
 $lastname = $_SESSION['user']['lastname'];
-
+$email = $_SESSION['user']['email'];
+$weight = $_SESSION['user']['weight'];
+$size = $_SESSION['user']['height'];
+$sexe = $_SESSION['user']['sex'];
+// $member = $_SESSION['user']['role'];
+if ($sexe === "man"){
+    $sexe = "Homme";
+}
+if ($sexe === "women"){
+    $sexe = "Femme";
+}
 // Calcul IMC :
 $height = $_SESSION["user"]["height"];
 $height = $height * 0.01; // Passer la taille de cm à m
@@ -31,23 +41,43 @@ if ($imc <= 18.5) {
 } elseif ($imc > 40) {
     $imcdata = "Obésite morbide ou massive";
 }
-
 $title = "Accueil";
 // HTML
 require_once "includes/header.php";
-require_once "includes/nav.php"; ?>
+?>
+<div class="start-container">
+<div class="container-logo-start container-logo-start-index">
+        <img src="img/Logo calorie.svg" alt="Logo">
+        <h1 class="title">Track Calorie</h1>
+    </div>
+</div>    
+<?php require_once "includes/nav.php"; ?>
 <div class="container-index">
+    <div class="container-profil">
+<h3>Profil de <?= "$name $lastname" ?></h3>
+<button class="profil-button"><img class="identity-card" src="../../trackcalorie/img/identity.svg" alt="identity" srcset=""></button>
+<div class="menu-profil">
+    <p>
+Nom : <?="$lastname" ?><br>
+Prénom : <?= "$name" ?> <br>
+Email : <?="$email"?><br>
+Poid : <?="$weight"?><br>
+Taille : <?="$size"?><br>
+Sexe : <?="$sexe"?><br>
+</p>
+</div>
+</div>
     <div class="container-index-title">
         <h2 class="title-imc"><?= "$imc" ?></h2>
         <p class="absolute-IMC">IMC</p>
         <h3 class="title-imc-text"><?= "$imcdata" ?></h3>
     </div>
+    
     <?php
     require_once "includes/errorResp.php";
     require_once "includes/validResp.php";
     ?>
 </div>
-<h2>Profil de <?= "$name $lastname" ?></h2>
 
 <div>
     <?php include_once "includes/graphic.php" ?>
@@ -55,7 +85,7 @@ require_once "includes/nav.php"; ?>
 
 <?php require_once "includes/graphic.php"; ?>
 <?php include_once "includes/modal.php"; ?>
-
+<div class="space-after-graph"></div>
 <script src="../../trackcalorie/script/chartcalorie.js"></script>
 <script src="script/main.js"></script>
 <?php

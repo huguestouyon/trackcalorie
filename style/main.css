@@ -10,6 +10,8 @@ body {
     box-sizing: border-box;
 }
 
+
+
 :root {
     --bg: #343A40;
     --yel: #FFC700;
@@ -23,6 +25,60 @@ body {
     background-color: var(--bg);
     font-family: 'Roboto', sans-serif;
 
+}
+.start-container {
+    background-color: var(--bg);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    animation: anim-start 2s;
+    animation-iteration-count: 1;
+}
+#chart-calorie {
+    animation: anim-hidden-start 2s;
+    animation-iteration-count: 1;
+}
+@keyframes anim-hidden-start{
+    from{visibility: hidden;}
+    to{visibility: hidden;}
+}
+.container-logo-start{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.container-logo-start-connexion{
+    animation: anim-end 0.8s forwards reverse;
+    animation-delay: .8s;
+    animation-iteration-count: 1;
+}
+.container-logo-start-index{
+    animation: anim-end-index 0.8s forwards reverse;
+    animation-delay: .8s;
+    animation-iteration-count: 1;
+}
+
+
+@keyframes anim-start { 
+    0% {
+        visibility: visible;
+    }
+    69%{ 
+        opacity: 1;
+    }
+    70% {
+        opacity: 0.5;
+    }
+    90%{
+        visibility: hidden;
+        opacity: 0;
+    }
 }
 
 .container-inscription .container-link div:last-child {
@@ -49,11 +105,25 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;
+    animation: anim-hidden-start 1.4s;
+    animation-iteration-count: 1;
 }
 
 footer svg {
     width: 50px;
     height: auto;
+}
+footer svg:hover {
+animation: anim-svg 2s infinite;
+}
+
+@keyframes anim-svg {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
 }
 
 .error {
@@ -82,11 +152,17 @@ footer svg {
     outline: none;
     margin-right: 1rem;
     cursor: pointer;
-    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.75);
+    transition: box-shadow cubic-bezier(0.6, -0.28, 0.74, 0.05) .7s;
 }
 
 .btn-nav button i{
     color: var(--grey);
+    transition: color .7s;
+}
+
+.btn-nav button:hover{
+box-shadow:0px 0px 7px 5px #ffc700b5;
 }
 
 .btn-nav button:hover i{
@@ -561,6 +637,10 @@ nav h1 {
     text-align: center;
     margin-top: 2em;
     width: 100%;
+    animation: anim-hidden-start 2s;
+    animation-iteration-count: 1;
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 .container-index h2 span:first-child {
@@ -813,4 +893,43 @@ color: white;
         margin: unset;
         width: unset;
     }
+}
+
+.footer-instant {
+    animation: anim-hidden-start 0;
+    animation-iteration-count: 1;
+}
+
+.anim-logo{
+    animation: logo-hidden 3.1s;
+}
+
+@keyframes logo-hidden {
+    0% {visibility: hidden;}
+    20% {visibility: hidden;}
+    50% {visibility: hidden;}
+    50% {opacity: 0.1;}
+}
+.space-after-graph {
+    width: 100%;
+    height: 100px;
+}
+td {
+    max-height: 21em;
+}
+.profil-button{
+    border: none;
+    background: none;
+}
+.identity-card{
+    width: 10em;
+}
+.identity-card:hover{
+    filter: invert(82%) sepia(69%) saturate(4999%) hue-rotate(356deg) brightness(102%) contrast(109%);
+}
+.menu-profil{
+    background-color: var(--bg);
+    width: 100%;
+    height: 20em;
+    display: none;
 }

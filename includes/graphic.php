@@ -9,17 +9,14 @@ if (!empty($data)):
 ?>
 
     <div id="chart-calorie">
-
 <!-- show-primary-axis -->
         <table class="charts-css column multiple show-labels show-heading show-data-on-hover" id="chart-calorie">
             <caption class="Container-caption"> Calories par Jour </caption>
             <tbody>
-
                     <?php foreach ($data as $key) { ?>
                         <tr><th scope="row"> <?= date('d/m/Y', strtotime($key["date"])) ?> </th>
                         <td style="--size: <?= $key["calorie"]/10000 ?>"><span class="data"><?= $key["calorie"] ?></span></td></tr><?php
                     } ?>
-
             </tbody>
         </table>
     </div>
