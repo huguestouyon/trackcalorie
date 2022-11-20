@@ -17,7 +17,7 @@ if (!empty($_POST)) {
             } else {
                 $_SESSION["force"]++;
             }
-            if($_SESSION["force"] > 10) {
+            if ($_SESSION["force"] > 10) {
                 $_SESSION["error"] = ["Trop de tentatives de connexions échoués"];
             }
             if ($_SESSION["error"] === []) {
@@ -26,16 +26,15 @@ if (!empty($_POST)) {
                 $query = $db->prepare($sql);
                 $query->bindValue(":email", $_POST["email"], PDO::PARAM_STR);
                 $query->execute();
-                
+
                 $user = $query->fetch();
                 // test
                 if (!$user) {
                     $_SESSION["error"][] = "Utilisateur ou mot de passe incorrect";
-                }
-                elseif(!password_verify($_POST["pass"], $user["pass"])) {
+                } elseif (!password_verify($_POST["pass"], $user["pass"])) {
                     $_SESSION["error"][] = "Utilisateur ou mot de passe incorrect";
                 }
-                
+                //var_dump($user);
                 if ($_SESSION["error"] === []) {
                     unset($_SESSION["force"]);
                     $_SESSION["user"] = [
@@ -45,8 +44,15 @@ if (!empty($_POST)) {
                         "email" => $_POST["email"],
                         "height" => $user["taille"],
                         "weight" => $user["poids"],
-                        "sex" => $user["sexe"]
+                        "sex" => $user["sexe"],
+                        "tel" => $user["tel"],
+                        "sport" => $user["sport"],
+                        "anniv" => $user["anniv"]
                     ];
+                    $today = date("Y-m-d");
+                    $sql = "DELETE FROM `calories` WHERE `date` > '$today'";
+                    $query = $db->prepare($sql);
+                    $query->execute();
                     header("Location: index.php");
                 }
             }
@@ -58,18 +64,17 @@ $title = "Connexion";
 require_once "includes/header.php";
 ?>
 <div class="start-container">
-<div class="container-logo-start container-logo-start-connexion">
+    <div class="container-logo-start container-logo-start-connexion">
         <img src="img/Logo calorie.svg" alt="Logo">
         <h1 class="title">Track Calorie</h1>
     </div>
 </div>
 <div class="container container-connexion">
-<div class="container-login">
-    <div class="container-logo anim-logo">
-        <img src="img/Logo calorie.svg" alt="Logo">
-        <h1 class="title">Track Calorie</h1>
-    </div>
-    
+    <div class="container-login">
+        <div class="container-logo anim-logo">
+            <img src="img/Logo calorie.svg" alt="Logo">
+            <h1 class="title">Track Calorie</h1>
+        </div>
         <div class="container-form">
             <div class="form">
                 <form action="" method="POST">
@@ -82,13 +87,13 @@ require_once "includes/header.php";
                         <input type="password" name="pass" id="pass" class="input-field-inscription" placeholder="Mot de passe" required>
                     </div>
                     <?php
-                    if(isset($_SESSION["error"])) {
-                ?>
-                            <p class="log-error"><?= $_SESSION["error"][0] ?></p>
-                <?php
+                    if (isset($_SESSION["error"])) {
+                    ?>
+                        <p class="log-error"><?= $_SESSION["error"][0] ?></p>
+                    <?php
                     }
-                        unset($_SESSION["error"]);
-                ?>
+                    unset($_SESSION["error"]);
+                    ?>
                     <button type="submit" class="btn-confirm">Me connecter <i class="fa-solid fa-arrow-right"></i></button>
                 </form>
             </div>
@@ -99,9 +104,9 @@ require_once "includes/header.php";
         <div class="lastlineconnexion">
             <a href="mdpoublie.php">Mot de passe oublié</a>
             <a href="inscription.php">Créer un compte</a>
-        </div>      
         </div>
     </div>
+</div>
 <script src="script/connect.js"></script>
 <?php
 require_once "includes/footer.php";
