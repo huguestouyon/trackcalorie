@@ -8,7 +8,7 @@ if(dateSoustrait < 9) {
 } else {
     dateModi = dateSoustrait+1
 }
-console.log(dateModi)
+
 
 // Calendar min & max element
 let d = isDate.getFullYear()+"-"+(isDate.getMonth()+1)+"-"+isDate.getDate()
@@ -51,7 +51,7 @@ if(imc.innerHTML > 35 && imc.innerHTML <= 40) {
 if(imc.innerHTML > 40) {
     imc.style.backgroundColor = "#811313"
     textImc.innerHTML = "Obésité morbide"
-    containerImc.style.marginRight = "2.5rem"
+    containerImc.style.marginRight = "2.5rem";
 }
 
 // Profil
@@ -70,4 +70,6 @@ function showProfil(){
         document.querySelector('.play1').className = 'identity-card';
     }
 }
+
+
 
