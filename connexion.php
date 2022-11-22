@@ -64,14 +64,15 @@ $title = "Connexion";
 require_once "includes/header.php";
 ?>
 <div class="start-container">
-    <div class="container-logo-start container-logo-start-connexion">
+
+<div class="container-logo-start container-logo-start-connexion">
         <img src="img/Logo calorie.svg" alt="Logo">
         <h1 class="title">Track Calorie</h1>
     </div>
 </div>
 <div class="container container-connexion">
-    <div class="container-login">
-        <div class="container-logo anim-logo">
+<div class="container-login">
+    <div class="container-logo anim-logo">
             <img src="img/Logo calorie.svg" alt="Logo">
             <h1 class="title">Track Calorie</h1>
         </div>

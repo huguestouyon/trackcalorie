@@ -51,8 +51,23 @@ if(imc.innerHTML > 35 && imc.innerHTML <= 40) {
 if(imc.innerHTML > 40) {
     imc.style.backgroundColor = "#811313"
     textImc.innerHTML = "Obésité morbide"
-    containerImc.style.marginRight = "2.5rem";
+    containerImc.style.marginRight = "2.5rem"
 }
 
+// Profil
 
+let profilButton = document.querySelector(".profil-button")
+let profilMenu = document.querySelector(".menu-profil")
+profilButton.addEventListener("click", showProfil)
+function showProfil(){
+      if (profilMenu.style.display !== "flex") {
+        profilMenu.style.display = "flex"
+        document.querySelector('.identity-card').className = 'play1';
+    }
+
+    else if (profilMenu.style.display !== "none") {
+        profilMenu.style.display = "none"
+        document.querySelector('.play1').className = 'identity-card';
+    }
+}
 

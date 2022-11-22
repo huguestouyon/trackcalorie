@@ -55,6 +55,11 @@ require_once "includes/header.php";
 <div class="container-index">
     <div class="container-profil">
 <h3>Profil de <?= "$name $lastname" ?></h3>
+
+<div class="container-zidane">
+<button class="profil-button"><img class="identity-card" src="../../trackcalorie/img/identity.svg" alt="identity" srcset=""></button>
+<div class="menu-profil">
+    <p class="p-profil">
 <button class="profil-button"><img class="identity-card" src="../../trackcalorie/img/identity.svg" alt="identity" srcset=""></button>
 <div class="menu-profil">
     <p>
@@ -64,6 +69,8 @@ Email : <?="$email"?><br>
 Poid : <?="$weight"?><br>
 Taille : <?="$size"?><br>
 Sexe : <?="$sexe"?><br>
+<p class="badge rounded-pill bg-warning mt-1 text-dark">Utilisateur</p>
+</div>
 </p>
 </div>
 </div>
@@ -79,7 +86,7 @@ Sexe : <?="$sexe"?><br>
     ?>
 </div>
 
-<div>
+<div class="container-graphic">
     <?php include_once "includes/graphic.php" ?>
 </div>
 
