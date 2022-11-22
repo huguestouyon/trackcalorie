@@ -9,18 +9,18 @@ if(!empty($_POST)) {
         include "includes/function.php";
         $_SESSION["error"] = [];
         if (!validateDate($_POST["supprdate"], 'Y-m-d')) {
-            $_SESSION["error"][] = "Une erreur est survenue dans le format de la date";
+            $_SESSION["error"][] = "Une erreur est survenue dans le format de la date 📆";
         }
         if ($_SESSION["error"] === []){
             $date = $_POST["supprdate"];
             $today = new DateTime();
-            $dateTest = new DateTime($date);
-            if ($today < $dateTest) {
-                $_SESSION["error"] = ["La date ne correspond pas (la date doit être aujourd'hui ou dans les 10 derniers jours)"];
+            $newDate = new DateTime($date);
+            if ($today < $newDate) {
+                $_SESSION["error"] = ["La date ne correspond pas (la date doit être aujourd'hui ou dans les 10 derniers jours) 📆"];
             }
             $today->modify('-10 day');
-            if ($dateTest < $today) {
-                $_SESSION["error"] = ["La date ne correspond pas (la date doit être aujourd'hui ou dans les 10 derniers jours)"];
+            if ($newDate < $today) {
+                $_SESSION["error"] = ["La date ne correspond pas (la date doit être aujourd'hui ou dans les 10 derniers jours) 📆"];
             }
             if ($_SESSION["error"] === []){
                 require "includes/connect.php";
@@ -40,25 +40,24 @@ if(!empty($_POST)) {
                     $query->bindValue(":datechoisie", $date, PDO::PARAM_STR);
                     $query->bindValue(":id", $_SESSION["user"]["id"], PDO::PARAM_STR);
                     $query->execute();
-                    $_SESSION["validinsertcalorie"] = ["Vos données ont bien été supprimé !"];
+                    $_SESSION["validinsertcalorie"] = ["Vos données ont bien été supprimé ! ✔️"];
                     header("Location: index.php");
                 } else {
-                    $_SESSION["validinsertcalorie"] = ["Vos données ont bien été supprimé !"];
+                    $_SESSION["validinsertcalorie"] = ["Vos données ont bien été supprimé ! ✔️"];
                     header("Location: index.php");
                 }
             } else {
                 header("Location: index.php");
             }
         } else {
-            $_SESSION["erreur"] = ["Une erreur est survenue"];
             header("Location: index.php");
         }
     } else {
-        $_SESSION["erreur"] = ["Une erreur est survenue"];
+        $_SESSION["erreur"] = ["Une erreur est survenue ‼️"];
         header("Location: index.php");
     }
 } else {
-    $_SESSION["erreur"] = ["Une erreur est survenue"];
+    $_SESSION["erreur"] = ["Une erreur est survenue ‼️"];
     header("Location: index.php");
 }
 ?>

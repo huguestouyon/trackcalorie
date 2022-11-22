@@ -15,7 +15,7 @@ $email = $_SESSION['user']['email'];
 $weight = $_SESSION['user']['weight'];
 $size = $_SESSION['user']['height'];
 $sexe = $_SESSION['user']['sex'];
-$member = $_SESSION['user']['role'];
+// $member = $_SESSION['user']['role'];
 if ($sexe === "man"){
     $sexe = "Homme";
 }
@@ -41,7 +41,6 @@ if ($imc <= 18.5) {
 } elseif ($imc > 40) {
     $imcdata = "Obésite morbide ou massive";
 }
-
 $title = "Accueil";
 // HTML
 require_once "includes/header.php";
@@ -56,10 +55,14 @@ require_once "includes/header.php";
 <div class="container-index">
     <div class="container-profil">
 <h3>Profil de <?= "$name $lastname" ?></h3>
+
 <div class="container-zidane">
 <button class="profil-button"><img class="identity-card" src="../../trackcalorie/img/identity.svg" alt="identity" srcset=""></button>
 <div class="menu-profil">
     <p class="p-profil">
+<button class="profil-button"><img class="identity-card" src="../../trackcalorie/img/identity.svg" alt="identity" srcset=""></button>
+<div class="menu-profil">
+    <p>
 Nom : <?="$lastname" ?><br>
 Prénom : <?= "$name" ?> <br>
 Email : <?="$email"?><br>
@@ -68,6 +71,7 @@ Taille : <?="$size"?><br>
 Sexe : <?="$sexe"?><br>
 <p class="badge rounded-pill bg-warning mt-1 text-dark">Utilisateur</p>
 </div>
+</p>
 </div>
 </div>
     <div class="container-index-title">
