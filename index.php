@@ -55,23 +55,19 @@ require_once "includes/header.php";
 <div class="container-index">
     <div class="container-profil">
 <h3>Profil de <?= "$name $lastname" ?></h3>
-
 <div class="container-zidane">
 <button class="profil-button"><img class="identity-card" src="../../trackcalorie/img/identity.svg" alt="identity" srcset=""></button>
 <div class="menu-profil">
-    <p class="p-profil">
-<button class="profil-button"><img class="identity-card" src="../../trackcalorie/img/identity.svg" alt="identity" srcset=""></button>
-<div class="menu-profil">
-    <p>
-Nom : <?="$lastname" ?><br>
-Prénom : <?= "$name" ?> <br>
-Email : <?="$email"?><br>
-Poid : <?="$weight"?><br>
-Taille : <?="$size"?><br>
-Sexe : <?="$sexe"?><br>
+    <ul class="p-profil">
+<li> Nom : <?="$lastname" ?> </li>
+<li>Prénom : <?= "$name" ?> </li>
+<li>Email : <?="$email"?></li>
+<li>Poid : <?="$weight"?> </li> 
+<li>Taille : <?="$size"?></li>
+<li>Sexe : <?="$sexe"?> </li>
+</ul>
 <p class="badge rounded-pill bg-warning mt-1 text-dark">Utilisateur</p>
 </div>
-</p>
 </div>
 </div>
     <div class="container-index-title">
