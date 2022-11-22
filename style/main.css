@@ -41,6 +41,9 @@ body {
 #chart-calorie {
     animation: anim-hidden-start 2s;
     animation-iteration-count: 1;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
 }
 @keyframes anim-hidden-start{
     from{visibility: hidden;}
@@ -52,6 +55,18 @@ body {
     flex-direction: column;
     gap: 2em;
 }
+
+.container-logo-start-connexion{
+    animation: anim-end 0.8s forwards reverse;
+    animation-delay: .8s;
+    animation-iteration-count: 1;
+}
+.container-logo-start-index{
+    animation: anim-end-index 0.8s forwards reverse;
+    animation-delay: .8s;
+    animation-iteration-count: 1;
+}
+
 
 @keyframes anim-start { 
     0% {
@@ -67,7 +82,6 @@ body {
         visibility: hidden;
         opacity: 0;
     }
-
 }
 
 .container-inscription .container-link div:last-child {
@@ -628,6 +642,8 @@ nav h1 {
     width: 100%;
     animation: anim-hidden-start 2s;
     animation-iteration-count: 1;
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 .container-index h2 span:first-child {
@@ -851,6 +867,10 @@ color: white;
 
 .Container-caption {
     min-width: 122px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    color: white;
 }
 @media screen and (min-width: 720px) {
     .container .container-link {
@@ -880,4 +900,103 @@ color: white;
         margin: unset;
         width: unset;
     }
+}
+
+.footer-instant {
+    animation: anim-hidden-start 0;
+    animation-iteration-count: 1;
+}
+
+.anim-logo{
+    animation: logo-hidden 3.1s;
+}
+
+@keyframes logo-hidden {
+    0% {visibility: hidden;}
+    20% {visibility: hidden;}
+    50% {visibility: hidden;}
+    50% {opacity: 0.1;}
+}
+.space-after-graph {
+    width: 100%;
+    height: 100px;
+}
+td {
+    max-height: 21em;
+}
+.profil-button{
+    border: none;
+    background: none;
+}
+.identity-card{
+    width: 10em;
+    filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+    transition: filter ease-in-out 1s;
+}
+.identity-card:hover{
+    filter: invert(82%) sepia(69%) saturate(4999%) hue-rotate(356deg) brightness(102%) contrast(109%) drop-shadow(3px 5px 2px #00000066);
+}
+.play1{
+    filter: invert(82%) sepia(69%) saturate(4999%) hue-rotate(356deg) brightness(102%) contrast(109%) drop-shadow(3px 5px 2px #00000066);
+    animation: anim-identity 2s forwards;
+    width: 10em;
+}
+.play2{
+    animation: anim-display 2s forwards;
+    background: white;
+    margin-left: 3em;
+    width: 15em;
+    height: 15em;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 4em;
+    position: absolute;
+    margin-left: 13em;
+}
+@keyframes anim-display {
+    from{opacity: 0;
+    transform: scale(0.5);}
+    to{opacity: 1;
+    transform: scale(1);}
+}
+@keyframes anim-identity{
+    0%{transition: all 1s;
+        }
+    100%{transform: scale(1.3);
+    margin-bottom: 10px;
+    margin-top: 10px;}
+}
+.menu-profil{
+    animation: anim-display 2s forwards;
+    background: white;
+    margin-left: 3em;
+    width: 15em;
+    height: 15em;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 4em;
+    display: none;
+    position: absolute;
+    margin-left: 13em;
+}
+.container-zidane {
+    display: inline-flex;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    align-items: center;
+}
+
+.p-profil {
+    text-align: start;
+}
+.container-graphic{
+    box-shadow: 0px 4px 21px rgb(0 0 0 / 25%);
+    width: 67%;
+    margin: 0 auto;
+    padding: 30px 30px 30px 30px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    animation: anim-hidden-start 2s;
 }

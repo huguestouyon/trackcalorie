@@ -107,10 +107,13 @@ ol.charts-css li {
 }
 
 .charts-css.show-heading caption {
-  display: block;
+  display: flex;
   width: 100%;
   min-width: 122px;
   height: var(--heading-size);
+  font-family: "Grenze";
+  font-size: 2em;
+  text-shadow: 0px 4px 4px rgb(0 0 0 / 75%);
 }
 
 /*

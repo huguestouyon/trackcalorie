@@ -6,9 +6,12 @@
 #chart-calorie tbody {
     overflow-y: hidden;
     padding: 30px;
-    border-radius: 10px;
-    box-shadow: inset -5px -5px 10px rgba(0, 0, 0, .5), 5px 5px 5px rgba(0, 0, 0, .5);
+    box-shadow: inset -5px -5px 10px rgb(0 0 0 / 50%), 5px 5px 5px rgb(0 0 0 / 50%);
     min-width: 150px;
+    background: #fff9f1;
+    border: #FFC700 6px solid;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
 }
 
 #chart-calorie tbody td {
@@ -18,8 +21,7 @@
 }
 
 #chart-calorie tbody th {
-    z-index: 1;
-    color: #FFF;
+    color: rgb(0, 0, 0);
 
 }
 
