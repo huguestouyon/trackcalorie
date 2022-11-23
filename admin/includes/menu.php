@@ -54,13 +54,21 @@
                     <span>Graphiques</span></a>
             </li>
 
-            <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" href="table.php">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Table</span></a>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#db" aria-expanded="true" aria-controls="collapsePages">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Base de données</span>
+                </a>
+                <div id="db" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Principale(s) :</h6>
+                        <a class="collapse-item" href="table_membre.php">Membres</a>
+                        <div class="collapse-divider"></div>
+                        <h6 class="collapse-header">Autres :</h6>
+                        <a class="collapse-item" href="table_calorie.php">Calories</a>
+                    </div>
+                </div>
             </li>
-
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
 
