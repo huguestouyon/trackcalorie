@@ -28,7 +28,7 @@ if (!empty($_POST)) {
         }
 
         // PassWord strictement inférieur à 6 caractères
-        if (strlen($_POST["pass"] < 6)) {
+        if (strlen($_POST["pass"]) < 6) {
             $_SESSION["error"][] = "Le mot de passe est trop court";
         }
 
@@ -74,10 +74,7 @@ if (!empty($_POST)) {
             }
 
             if ($_SESSION["error"] === []) {
-
-
                 $sql = "INSERT INTO `membres` (`nom`, `prenom`, `email`, `pass`, `taille`, `poids`, `sexe`, `role`, `sport`) VALUES (:nom, :prenom, :email, '$pass', :taille, :poids, :sexe, '[\"ROLE_USER\"]', 0)";
-
                 $query = $db->prepare($sql);
                 $query->bindValue(":nom", $lastname, PDO::PARAM_STR);
                 $query->bindValue(":prenom", $name, PDO::PARAM_STR);
@@ -101,7 +98,6 @@ if (!empty($_POST)) {
                     "anniv" => null
                 ];
                 header("Location: index.php");
-
             }
         }
     } else {
