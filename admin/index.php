@@ -220,7 +220,7 @@ require_once "includes/navbaradmin.php";
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
-                    <div class="chart-pie pt-4 pb-2">
+                    <div class="pb-2">
                     <div id="chartContainer" style="height: 370px; width: 100%;"></div>
                     
                     </div>
