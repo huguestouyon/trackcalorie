@@ -149,7 +149,8 @@ require_once "includes/navbaradmin.php";
                             <div class="h5 mb-0 font-weight-bold text-gray-800"><?= $calorieTot ?></div>
                         </div>
                         <div class="col-auto">
-                            <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                            <i class="fas fa-cookie-bite fa-2x text-gray-300"></i>
+                            
                         </div>
                     </div>
                 </div>

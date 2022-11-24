@@ -53,8 +53,12 @@ require_once "includes/header.php";
 </div>    
 <?php require_once "includes/nav.php"; ?>
 <div class="container-index">
+    <?php
+    require_once "includes/errorResp.php";
+    require_once "includes/validResp.php";
+    ?>
     <div class="container-profil">
-<h3>Profil de <?= "$name $lastname" ?></h3>
+<h3 class="titre-profil">Profil de <?= "$name $lastname" ?><br> <p><i class="fa-solid fa-arrow-down icono"></i></p></h3>
 <div class="container-zidane">
 <button class="profil-button"><img class="identity-card" src="../../trackcalorie/img/identity.svg" alt="identity" srcset=""></button>
 <div class="menu-profil">
@@ -75,11 +79,6 @@ require_once "includes/header.php";
         <p class="absolute-IMC">IMC</p>
         <h3 class="title-imc-text"><?= "$imcdata" ?></h3>
     </div>
-    
-    <?php
-    require_once "includes/errorResp.php";
-    require_once "includes/validResp.php";
-    ?>
 </div>
 
 <div class="container-graphic">

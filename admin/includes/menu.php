@@ -56,7 +56,7 @@
 
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#db" aria-expanded="true" aria-controls="collapsePages">
-                    <i class="fas fa-fw fa-folder"></i>
+                    
                     <span>Base de données</span>
                 </a>
                 <div id="db" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
